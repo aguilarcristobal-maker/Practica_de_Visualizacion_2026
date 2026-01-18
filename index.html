@@ -25,20 +25,12 @@
             --border: #e2e8f0;
         }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        
-        /* Header mejorado */
         .header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #1e4d6b 100%);
-            color: white;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white; padding: 2rem 1.5rem; text-align: center; position: relative; overflow: hidden;
         }
         .header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
         }
@@ -46,90 +38,25 @@
         .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .header .subtitle { font-size: 1rem; opacity: 0.9; margin-bottom: 0.8rem; }
         .header-meta { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .header .badge { 
-            display: inline-block; 
-            background: rgba(255,255,255,0.2); 
-            backdrop-filter: blur(10px);
-            color: white; 
-            padding: 0.4rem 1rem; 
-            border-radius: 50px; 
-            font-weight: 500; 
-            font-size: 0.8rem;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
+        .header .badge { display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; padding: 0.4rem 1rem; border-radius: 50px; font-weight: 500; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.3); }
         .badge.accent { background: var(--accent); color: var(--primary); border: none; }
-        
-        /* Navigation mejorada */
-        .nav {
-            background: var(--card);
-            padding: 0.8rem 1rem;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
+        .nav { background: var(--card); padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1400px; margin: 0 auto; display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; }
-        .nav-btn {
-            padding: 0.5rem 1rem;
-            border: none;
-            background: transparent;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-light);
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
+        .nav-btn { padding: 0.5rem 1rem; border: none; background: transparent; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.85rem; font-weight: 500; color: var(--text-light); transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; }
         .nav-btn:hover { background: var(--bg); color: var(--text); }
         .nav-btn.active { background: var(--primary); color: white; }
-        
-        /* Container */
         .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
-        
-        /* Sections */
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Cards mejoradas */
-        .card {
-            background: var(--card);
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
-        }
+        .card { background: var(--card); border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid var(--border); }
         .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
         .card-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
         .card-subtitle { font-size: 0.8rem; color: var(--text-light); margin-top: 0.2rem; }
-        
-        /* KPIs mejorados */
         .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
-        .kpi-card {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 1.2rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+        .kpi-card { background: var(--card); border-radius: 16px; padding: 1.2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); text-align: center; border: 1px solid var(--border); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
         .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 15px -3px rgba(0,0,0,0.15); }
-        .kpi-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
+        .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
         .kpi-card.success::before { background: linear-gradient(90deg, var(--success), #22c55e); }
         .kpi-card.danger::before { background: linear-gradient(90deg, var(--danger), #ef4444); }
         .kpi-card.accent::before { background: linear-gradient(90deg, var(--accent), #fbbf24); }
@@ -141,178 +68,47 @@
         .kpi-change { font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem; }
         .kpi-change.positive { color: var(--success); }
         .kpi-change.negative { color: var(--danger); }
-        
-        /* Controls mejorados */
-        .controls {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 1rem;
-            background: var(--bg);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-        }
+        .controls { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; padding: 1rem; background: var(--bg); border-radius: 12px; margin-bottom: 1rem; }
         .control-group { display: flex; align-items: center; gap: 0.5rem; }
         .control-label { font-size: 0.8rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.03em; }
-        select, input[type="range"] {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.85rem;
-            cursor: pointer;
-            background: white;
-            transition: border-color 0.2s;
-        }
+        select, input[type="range"] { padding: 0.5rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.85rem; cursor: pointer; background: white; transition: border-color 0.2s; }
         select:focus, input[type="range"]:focus { outline: none; border-color: var(--primary); }
         input[type="range"] { width: 200px; padding: 0.3rem; }
-        
-        /* Botones */
-        .btn {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--secondary); }
-        .btn-success { background: var(--success); color: white; }
-        .btn-success:hover { background: #15803d; }
+        .btn { padding: 0.5rem 1rem; border: none; border-radius: 8px; font-family: inherit; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; }
         .btn-outline { background: transparent; border: 2px solid var(--border); color: var(--text); }
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-        
-        /* Player controls */
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            background: white;
-            border-radius: 8px;
-            border: 2px solid var(--border);
-        }
-        .player-btn {
-            width: 36px;
-            height: 36px;
-            border: none;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
+        .player-controls { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; border: 2px solid var(--border); }
+        .player-btn { width: 36px; height: 36px; border: none; border-radius: 50%; background: var(--primary); color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
         .player-btn:hover { background: var(--secondary); }
         .player-btn.playing { background: var(--danger); }
-        .year-display {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            min-width: 60px;
-            text-align: center;
-        }
-        
-        /* Chart container */
+        .year-display { font-size: 1.2rem; font-weight: 700; color: var(--primary); min-width: 60px; text-align: center; }
         .chart-container { position: relative; height: 400px; width: 100%; }
         .chart-container.tall { height: 500px; }
         .chart-container.short { height: 300px; }
-        
-        /* Grid layouts */
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        
-        /* Intro box */
-        .intro-box {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #bae6fd;
-        }
+        .intro-box { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #bae6fd; }
         .intro-box h2 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
         .intro-box ul { margin-left: 1.5rem; margin-top: 0.5rem; }
         .intro-box li { margin-bottom: 0.3rem; }
-        
-        /* Hallazgo box */
-        .hallazgo {
-            background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
-            border-left: 4px solid var(--accent);
-            padding: 1rem 1.2rem;
-            margin: 1rem 0;
-            border-radius: 0 12px 12px 0;
-        }
+        .hallazgo { background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%); border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 12px 12px 0; }
         .hallazgo-title { font-weight: 600; color: var(--primary); margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
-        
-        /* Legend custom */
-        .legend-custom {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
+        .legend-custom { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
         .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; }
         .legend-color { width: 16px; height: 16px; border-radius: 4px; }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
+        .footer { background: var(--primary); color: white; text-align: center; padding: 2rem; margin-top: 2rem; }
         .footer a { color: var(--accent); text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
         .footer-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
         .footer-item { text-align: center; }
         .footer-label { font-size: 0.7rem; opacity: 0.7; text-transform: uppercase; }
         .footer-value { font-weight: 600; }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .header h1 { font-size: 1.4rem; }
             .kpi-value { font-size: 1.6rem; }
             .chart-container { height: 300px; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .grid-2 { grid-template-columns: 1fr; }
             .controls { flex-direction: column; align-items: stretch; }
-            .control-group { justify-content: space-between; }
         }
-        
-        /* Tooltip personalizado */
-        .custom-tooltip {
-            position: absolute;
-            background: rgba(30, 58, 95, 0.95);
-            color: white;
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            pointer-events: none;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            max-width: 250px;
-        }
-        
-        /* Animación de números */
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-number { animation: countUp 0.5s ease-out; }
-        
-        /* Heatmap styles */
         .heatmap-container { overflow-x: auto; }
         .heatmap-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
         .heatmap-table th, .heatmap-table td { padding: 0.4rem; text-align: center; border: 1px solid var(--border); }
@@ -334,7 +130,6 @@
             </div>
         </div>
     </header>
-
     <nav class="nav">
         <div class="nav-container">
             <button class="nav-btn active" onclick="showSection('resumen')">📋 Resumen</button>
@@ -347,9 +142,8 @@
             <button class="nav-btn" onclick="showSection('correlacion')">📉 Correlación</button>
         </div>
     </nav>
-
     <main class="container">
-        <!-- ==================== SECCIÓN RESUMEN ==================== -->
+        <!-- RESUMEN -->
         <div id="resumen" class="section active">
             <div class="intro-box">
                 <h2>🎯 Objetivos del Análisis</h2>
@@ -362,481 +156,158 @@
                     <li>¿Cuál es la tendencia del suicidio como problema de salud pública?</li>
                 </ul>
             </div>
-
             <div class="kpi-grid">
-                <div class="kpi-card success">
-                    <div class="kpi-label">Mortalidad 2023</div>
-                    <div class="kpi-value" id="kpi1">819.9</div>
-                    <div class="kpi-change positive">↓ -4.3% vs 2010</div>
-                </div>
-                <div class="kpi-card success">
-                    <div class="kpi-label">Esperanza Vida (65)</div>
-                    <div class="kpi-value" id="kpi2">21.5</div>
-                    <div class="kpi-change positive">↑ +0.9 años</div>
-                </div>
-                <div class="kpi-card accent">
-                    <div class="kpi-label">Brecha Género</div>
-                    <div class="kpi-value" id="kpi3">3.8</div>
-                    <div class="kpi-change">años (♀ > ♂)</div>
-                </div>
-                <div class="kpi-card danger">
-                    <div class="kpi-label">Exceso COVID</div>
-                    <div class="kpi-value" id="kpi4">+5.6%</div>
-                    <div class="kpi-change negative">2020-2021</div>
-                </div>
-                <div class="kpi-card danger">
-                    <div class="kpi-label">Tendencia Suicidio</div>
-                    <div class="kpi-value" id="kpi5">+11.2%</div>
-                    <div class="kpi-change negative">única causa ↑</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-label">Disparidad Territorial</div>
-                    <div class="kpi-value" id="kpi6">25%</div>
-                    <div class="kpi-change">entre extremos</div>
-                </div>
+                <div class="kpi-card success"><div class="kpi-label">Mortalidad 2023</div><div class="kpi-value">819.9</div><div class="kpi-change positive">↓ -4.3% vs 2010</div></div>
+                <div class="kpi-card success"><div class="kpi-label">Esperanza Vida (65)</div><div class="kpi-value">21.5</div><div class="kpi-change positive">↑ +0.9 años</div></div>
+                <div class="kpi-card accent"><div class="kpi-label">Brecha Género</div><div class="kpi-value">3.8</div><div class="kpi-change">años (♀ > ♂)</div></div>
+                <div class="kpi-card danger"><div class="kpi-label">Exceso COVID</div><div class="kpi-value">+5.6%</div><div class="kpi-change negative">2020-2021</div></div>
+                <div class="kpi-card danger"><div class="kpi-label">Tendencia Suicidio</div><div class="kpi-value">+11.2%</div><div class="kpi-change negative">única causa ↑</div></div>
+                <div class="kpi-card"><div class="kpi-label">Disparidad Territorial</div><div class="kpi-value">25%</div><div class="kpi-change">entre extremos</div></div>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <div>
                         <div class="card-title">📈 Evolución General 2010-2023</div>
-                        <div class="card-subtitle">Tendencia descendente con disrupción COVID-19</div>
-                    </div>
-                    <div class="player-controls">
-                        <button class="player-btn" id="playBtnResumen" onclick="toggleAnimation('resumen')">▶</button>
-                        <input type="range" id="sliderResumen" min="2010" max="2023" value="2023" oninput="updateYearResumen(this.value)">
-                        <span class="year-display" id="yearDisplayResumen">2023</span>
+                        <div class="card-subtitle">Tendencia descendente con disrupción COVID-19 (2020-2021)</div>
                     </div>
                 </div>
-                <div class="chart-container">
-                    <canvas id="chartResumen"></canvas>
-                </div>
+                <div class="chart-container"><canvas id="chartResumen"></canvas></div>
                 <div class="legend-custom">
                     <div class="legend-item"><div class="legend-color" style="background: #3b82f6;"></div> Hombres</div>
                     <div class="legend-item"><div class="legend-color" style="background: #ec4899;"></div> Mujeres</div>
                     <div class="legend-item"><div class="legend-color" style="background: #8b5cf6;"></div> Ambos sexos</div>
-                    <div class="legend-item"><div class="legend-color" style="background: rgba(254, 202, 202, 0.5);"></div> Período COVID</div>
                 </div>
             </div>
         </div>
-
-        <!-- ==================== SECCIÓN EVOLUCIÓN TEMPORAL ==================== -->
+        <!-- TEMPORAL -->
         <div id="temporal" class="section">
             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">📈 Evolución de la Mortalidad General</div>
-                        <div class="card-subtitle">Comunitat Valenciana 2010-2023 | Tasa ajustada por edad</div>
-                    </div>
-                </div>
+                <div class="card-header"><div><div class="card-title">📈 Evolución de la Mortalidad General</div><div class="card-subtitle">Comunitat Valenciana 2010-2023 | Tasa ajustada por edad</div></div></div>
                 <div class="controls">
-                    <div class="control-group">
-                        <span class="control-label">Sexo:</span>
-                        <select id="selectSexoTemporal" onchange="updateTemporalChart()">
-                            <option value="todos">Todos</option>
-                            <option value="hombres">Solo Hombres</option>
-                            <option value="mujeres">Solo Mujeres</option>
-                            <option value="ambos">Solo Ambos Sexos</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <span class="control-label">Rango años:</span>
-                        <select id="selectRangoTemporal" onchange="updateTemporalChart()">
-                            <option value="todos">2010-2023 (completo)</option>
-                            <option value="pre">2010-2019 (Pre-COVID)</option>
-                            <option value="post">2020-2023 (Post-COVID)</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <button class="btn btn-outline" onclick="exportData('temporal')">📥 Exportar CSV</button>
-                    </div>
+                    <div class="control-group"><span class="control-label">Sexo:</span><select id="selectSexoTemporal" onchange="updateTemporalChart()"><option value="todos">Todos</option><option value="hombres">Solo Hombres</option><option value="mujeres">Solo Mujeres</option><option value="ambos">Solo Ambos Sexos</option></select></div>
+                    <div class="control-group"><span class="control-label">Rango:</span><select id="selectRangoTemporal" onchange="updateTemporalChart()"><option value="todos">2010-2023 (completo)</option><option value="pre">2010-2019 (Pre-COVID)</option><option value="post">2020-2023 (Post-COVID)</option></select></div>
+                    <div class="control-group"><button class="btn btn-outline" onclick="exportData('temporal')">📥 Exportar CSV</button></div>
                 </div>
-                <div class="chart-container">
-                    <canvas id="chartTemporal"></canvas>
-                </div>
+                <div class="chart-container"><canvas id="chartTemporal"></canvas></div>
             </div>
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>La mortalidad general ha descendido un <strong>4.3%</strong> entre 2010 y 2023, alcanzando el <strong>mínimo histórico de 819.9</strong> por 100.000 habitantes. El COVID-19 interrumpió temporalmente esta tendencia positiva con un pico del +5.6% en 2020-2021, pero la recuperación post-pandémica ha sido completa.</p>
-            </div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>La mortalidad general ha descendido un <strong>4.3%</strong> entre 2010 y 2023, alcanzando el <strong>mínimo histórico de 819.9</strong> por 100.000 habitantes. El COVID-19 interrumpió temporalmente esta tendencia positiva con un pico del +5.6% en 2020-2021.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN CAUSAS ==================== -->
+        <!-- CAUSAS -->
         <div id="causas" class="section">
             <div class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">🏥 Jerarquía de Causas de Mortalidad</div>
-                            <div class="card-subtitle">Tasa promedio 2010-2023 por 100.000 hab.</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartCausas"></canvas>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">📉 Cambio Porcentual por Causa</div>
-                            <div class="card-subtitle">Variación 2010-2023</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartTendenciaCausas"></canvas>
-                    </div>
-                </div>
+                <div class="card"><div class="card-header"><div><div class="card-title">🏥 Jerarquía de Causas de Mortalidad</div><div class="card-subtitle">Tasa promedio 2010-2023</div></div></div><div class="chart-container"><canvas id="chartCausas"></canvas></div></div>
+                <div class="card"><div class="card-header"><div><div class="card-title">📉 Cambio Porcentual por Causa</div><div class="card-subtitle">Variación 2010-2023</div></div></div><div class="chart-container"><canvas id="chartTendenciaCausas"></canvas></div></div>
             </div>
-            
             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">⚠️ Tendencia del Suicidio - Señal de Alarma</div>
-                        <div class="card-subtitle">Única causa con tendencia ascendente (+11.2%)</div>
-                    </div>
-                    <div class="player-controls">
-                        <button class="player-btn" id="playBtnSuicidio" onclick="toggleAnimation('suicidio')">▶</button>
-                        <input type="range" id="sliderSuicidio" min="2010" max="2023" value="2023" oninput="updateYearSuicidio(this.value)">
-                        <span class="year-display" id="yearDisplaySuicidio">2023</span>
-                    </div>
+                <div class="card-header"><div><div class="card-title">⚠️ Tendencia del Suicidio - Señal de Alarma</div><div class="card-subtitle">Única causa con tendencia ascendente (+11.2%)</div></div>
+                    <div class="player-controls"><button class="player-btn" id="playBtnSuicidio" onclick="toggleAnimation('suicidio')">▶</button><input type="range" id="sliderSuicidio" min="2010" max="2023" value="2023" oninput="updateYearSuicidio(this.value)"><span class="year-display" id="yearDisplaySuicidio">2023</span></div>
                 </div>
-                <div class="chart-container short">
-                    <canvas id="chartSuicidio"></canvas>
-                </div>
+                <div class="chart-container short"><canvas id="chartSuicidio"></canvas></div>
             </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>El <strong>cáncer domina</strong> con 228.8/100.000, triplicando a la cardiopatía isquémica. Mientras las causas cardiovasculares han descendido significativamente (-22 a -24%), <strong>el suicidio es la única causa que aumenta (+11.2%)</strong>, constituyendo una alerta de salud pública que requiere atención prioritaria.</p>
-            </div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>El <strong>cáncer domina</strong> con 228.8/100.000. Mientras las causas cardiovasculares han descendido (-22 a -24%), <strong>el suicidio es la única causa que aumenta (+11.2%)</strong>.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN GÉNERO ==================== -->
+        <!-- GÉNERO -->
         <div id="genero" class="section">
             <div class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">⚤ Ratio de Mortalidad Hombres/Mujeres</div>
-                            <div class="card-subtitle">Los hombres mueren más en TODAS las causas</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartRatioGenero"></canvas>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">📊 Tasas Absolutas por Sexo y Causa</div>
-                            <div class="card-subtitle">Comparativa directa Hombres vs Mujeres</div>
-                        </div>
-                    </div>
-                    <div class="controls">
-                        <div class="control-group">
-                            <span class="control-label">Causa:</span>
-                            <select id="selectCausaGenero" onchange="updateGeneroChart()">
-                                <option value="todas">Todas las causas</option>
-                                <option value="cancer">Cáncer</option>
-                                <option value="cardio">Cardiopatía Isquémica</option>
-                                <option value="cerebro">Enf. Cerebrovascular</option>
-                                <option value="suicidio">Suicidio</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartGeneroBarras"></canvas>
-                    </div>
+                <div class="card"><div class="card-header"><div><div class="card-title">⚤ Ratio de Mortalidad Hombres/Mujeres</div><div class="card-subtitle">Los hombres mueren más en TODAS las causas</div></div></div><div class="chart-container"><canvas id="chartRatioGenero"></canvas></div></div>
+                <div class="card"><div class="card-header"><div><div class="card-title">📊 Tasas Absolutas por Sexo y Causa</div><div class="card-subtitle">Comparativa directa</div></div></div>
+                    <div class="controls"><div class="control-group"><span class="control-label">Causa:</span><select id="selectCausaGenero" onchange="updateGeneroChart()"><option value="todas">Todas las causas</option><option value="cancer">Cáncer</option><option value="cardio">Cardiopatía Isquémica</option><option value="cerebro">Enf. Cerebrovascular</option><option value="suicidio">Suicidio</option></select></div></div>
+                    <div class="chart-container"><canvas id="chartGeneroBarras"></canvas></div>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">📈 Esperanza de Vida a los 65 años por Sexo</div>
-                        <div class="card-subtitle">Brecha persistente de ~4 años que no se ha reducido</div>
-                    </div>
-                </div>
-                <div class="chart-container short">
-                    <canvas id="chartEVGenero"></canvas>
-                </div>
-            </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>Los hombres presentan tasas de mortalidad significativamente superiores en todas las causas: <strong>3.1x en suicidio</strong>, 2.3x en cardiopatía y 2.1x en cáncer. Esto se traduce en que las mujeres viven <strong>3.8 años más</strong> a partir de los 65 años. Notablemente, esta brecha de género <strong>NO se ha reducido</strong> en los 14 años analizados.</p>
-            </div>
+            <div class="card"><div class="card-header"><div><div class="card-title">📈 Esperanza de Vida a los 65 años por Sexo</div><div class="card-subtitle">Brecha persistente de ~4 años</div></div></div><div class="chart-container short"><canvas id="chartEVGenero"></canvas></div></div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>Los hombres presentan tasas de mortalidad superiores: <strong>3.1x en suicidio</strong>, 2.3x en cardiopatía. Las mujeres viven <strong>3.8 años más</strong> a partir de los 65 años.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN TERRITORIAL ==================== -->
+        <!-- TERRITORIAL -->
         <div id="territorial" class="section">
             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">🗺️ Ranking de Departamentos de Salud</div>
-                        <div class="card-subtitle">Tasa de mortalidad promedio 2010-2023 | Disparidad del 25% entre extremos</div>
-                    </div>
-                </div>
+                <div class="card-header"><div><div class="card-title">🗺️ Ranking de Departamentos de Salud</div><div class="card-subtitle">Tasa de mortalidad promedio 2010-2023 | Disparidad del 25% entre extremos</div></div></div>
                 <div class="controls">
-                    <div class="control-group">
-                        <span class="control-label">Provincia:</span>
-                        <select id="selectProvincia" onchange="updateDepartamentosChart()">
-                            <option value="todas">Todas</option>
-                            <option value="Alicante">Alicante</option>
-                            <option value="Valencia">Valencia</option>
-                            <option value="Castellón">Castellón</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <span class="control-label">Ordenar:</span>
-                        <select id="selectOrden" onchange="updateDepartamentosChart()">
-                            <option value="asc">Menor a Mayor</option>
-                            <option value="desc">Mayor a Menor</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <button class="btn btn-outline" onclick="exportData('departamentos')">📥 Exportar CSV</button>
-                    </div>
+                    <div class="control-group"><span class="control-label">Provincia:</span><select id="selectProvincia" onchange="updateDepartamentosChart()"><option value="todas">Todas</option><option value="Alicante">Alicante</option><option value="Valencia">Valencia</option><option value="Castellón">Castellón</option></select></div>
+                    <div class="control-group"><span class="control-label">Ordenar:</span><select id="selectOrden" onchange="updateDepartamentosChart()"><option value="asc">Menor a Mayor</option><option value="desc">Mayor a Menor</option></select></div>
+                    <div class="control-group"><button class="btn btn-outline" onclick="exportData('departamentos')">📥 Exportar CSV</button></div>
                 </div>
-                <div class="chart-container tall">
-                    <canvas id="chartDepartamentos"></canvas>
-                </div>
+                <div class="chart-container tall"><canvas id="chartDepartamentos"></canvas></div>
                 <div class="legend-custom">
                     <div class="legend-item"><div class="legend-color" style="background: #16a34a;"></div> Alicante</div>
                     <div class="legend-item"><div class="legend-color" style="background: #3b82f6;"></div> Valencia</div>
                     <div class="legend-item"><div class="legend-color" style="background: #eab308;"></div> Castellón</div>
-                    <div class="legend-item" style="margin-left: 1rem;"><span style="color: var(--danger); font-weight: 600;">---|</span> Media CV: 868</div>
+                    <div class="legend-item" style="margin-left: 1rem;"><span style="color: var(--danger); font-weight: 600;">---|</span> Media CV: 876</div>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">📊 Comparativa por Provincias</div>
-                        <div class="card-subtitle">Evolución temporal 2010-2023</div>
-                    </div>
-                </div>
-                <div class="chart-container short">
-                    <canvas id="chartProvincias"></canvas>
-                </div>
-            </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>Existe una <strong>variabilidad del 25%</strong> entre el departamento con mayor mortalidad (La Ribera: 968) y el de menor (Doctor Peset: 783). Esta diferencia equivale a aproximadamente <strong>480 muertes evitables anuales</strong>. Alicante presenta consistentemente el mejor perfil de salud, mientras Valencia concentra más departamentos con tasas elevadas. Las disparidades son <strong>estructurales y persistentes</strong> en el tiempo.</p>
-            </div>
+            <div class="card"><div class="card-header"><div><div class="card-title">📊 Comparativa por Provincias</div><div class="card-subtitle">Evolución temporal 2010-2023</div></div></div><div class="chart-container short"><canvas id="chartProvincias"></canvas></div></div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>Existe una <strong>variabilidad del 25%</strong> entre Ribera (975.2) y Doctor Peset (783.1). Las disparidades son <strong>estructurales y persistentes</strong>.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN HEATMAP ==================== -->
+        <!-- HEATMAP -->
         <div id="heatmap" class="section">
             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">🔥 Mapa de Calor: Mortalidad por Departamento y Año</div>
-                        <div class="card-subtitle">Visualización bidimensional | Rojo = Mayor mortalidad | Verde = Menor mortalidad</div>
-                    </div>
-                    <button class="btn btn-outline" onclick="exportData('heatmap')">📥 Exportar CSV</button>
-                </div>
-                <div class="heatmap-container">
-                    <table class="heatmap-table" id="heatmapTable">
-                        <!-- Se genera dinámicamente -->
-                    </table>
-                </div>
+                <div class="card-header"><div><div class="card-title">🔥 Mapa de Calor: Mortalidad por Departamento y Año</div><div class="card-subtitle">Rojo = Mayor mortalidad | Verde = Menor mortalidad</div></div><button class="btn btn-outline" onclick="exportData('heatmap')">📥 Exportar CSV</button></div>
+                <div class="heatmap-container"><table class="heatmap-table" id="heatmapTable"></table></div>
             </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>El heatmap revela patrones <strong>estructurales y persistentes</strong>: los departamentos mantienen su posición relativa durante los 14 años. Las columnas de 2020-2021 muestran un oscurecimiento generalizado (mayor mortalidad) por el COVID-19, pero la estructura territorial subyacente permanece estable. Esto sugiere que las disparidades están asociadas a factores socioeconómicos y demográficos de largo plazo.</p>
-            </div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>El heatmap revela patrones <strong>estructurales y persistentes</strong>: los departamentos mantienen su posición relativa durante los 14 años. 2020-2021 muestran mayor mortalidad por COVID-19.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN COVID ==================== -->
+        <!-- COVID -->
         <div id="covid" class="section">
             <div class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">🦠 Impacto COVID-19 - Valores Absolutos</div>
-                            <div class="card-subtitle">Comparativa por período</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartCovidAbsoluto"></canvas>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">📊 Exceso de Mortalidad</div>
-                            <div class="card-subtitle">Variación % respecto a Pre-COVID</div>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="chartCovidRelativo"></canvas>
-                    </div>
-                </div>
+                <div class="card"><div class="card-header"><div><div class="card-title">🦠 Impacto COVID-19 - Valores Absolutos</div><div class="card-subtitle">Comparativa por período</div></div></div><div class="chart-container"><canvas id="chartCovidAbsoluto"></canvas></div></div>
+                <div class="card"><div class="card-header"><div><div class="card-title">📊 Exceso de Mortalidad</div><div class="card-subtitle">Variación % respecto a Pre-COVID</div></div></div><div class="chart-container"><canvas id="chartCovidRelativo"></canvas></div></div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">📈 Impacto COVID por Sexo</div>
-                        <div class="card-subtitle">Diferencias en el exceso de mortalidad</div>
-                    </div>
-                </div>
-                <div class="chart-container short">
-                    <canvas id="chartCovidSexo"></canvas>
-                </div>
-            </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>El COVID-19 generó un exceso de mortalidad del <strong>5.3% en 2020</strong> y <strong>5.9% en 2021</strong>, equivalente a aproximadamente <strong>2.800 muertes adicionales</strong> en el bienio pandémico. La recuperación en 2022-2023 ha sido completa, regresando a niveles pre-pandémicos. El impacto fue ligeramente mayor en hombres, consistente con la literatura internacional.</p>
-            </div>
+            <div class="card"><div class="card-header"><div><div class="card-title">📈 Impacto COVID por Sexo</div></div></div><div class="chart-container short"><canvas id="chartCovidSexo"></canvas></div></div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>El COVID-19 generó un exceso de mortalidad del <strong>5.3% en 2020</strong> y <strong>5.9% en 2021</strong>. La recuperación en 2022-2023 ha sido completa.</p></div>
         </div>
-
-        <!-- ==================== SECCIÓN CORRELACIÓN ==================== -->
+        <!-- CORRELACIÓN -->
         <div id="correlacion" class="section">
             <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">📉 Correlación: Mortalidad vs Esperanza de Vida</div>
-                        <div class="card-subtitle">672 observaciones | Departamento × Año × Sexo</div>
-                    </div>
-                </div>
+                <div class="card-header"><div><div class="card-title">📉 Correlación: Mortalidad vs Esperanza de Vida</div><div class="card-subtitle">672 observaciones | Departamento × Año × Sexo</div></div></div>
                 <div class="controls">
-                    <div class="control-group">
-                        <span class="control-label">Sexo:</span>
-                        <select id="selectCorrelacion" onchange="updateCorrelacionChart()">
-                            <option value="todos">Ambos</option>
-                            <option value="hombres">Solo Hombres</option>
-                            <option value="mujeres">Solo Mujeres</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <span class="control-label">Año:</span>
-                        <select id="selectAnoCorrelacion" onchange="updateCorrelacionChart()">
-                            <option value="todos">Todos (2010-2023)</option>
-                            <option value="2010">2010</option>
-                            <option value="2011">2011</option>
-                            <option value="2012">2012</option>
-                            <option value="2013">2013</option>
-                            <option value="2014">2014</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020 (COVID)</option>
-                            <option value="2021">2021 (COVID)</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <span class="control-label">Provincia:</span>
-                        <select id="selectProvCorrelacion" onchange="updateCorrelacionChart()">
-                            <option value="todas">Todas</option>
-                            <option value="Alicante">Alicante</option>
-                            <option value="Castellón">Castellón</option>
-                            <option value="Valencia">Valencia</option>
-                        </select>
-                    </div>
+                    <div class="control-group"><span class="control-label">Sexo:</span><select id="selectCorrelacion" onchange="updateCorrelacionChart()"><option value="todos">Ambos</option><option value="hombres">Solo Hombres</option><option value="mujeres">Solo Mujeres</option></select></div>
+                    <div class="control-group"><span class="control-label">Año:</span><select id="selectAnoCorrelacion" onchange="updateCorrelacionChart()"><option value="todos">Todos (2010-2023)</option><option value="2010">2010</option><option value="2015">2015</option><option value="2019">2019</option><option value="2020">2020 (COVID)</option><option value="2021">2021 (COVID)</option><option value="2023">2023</option></select></div>
+                    <div class="control-group"><span class="control-label">Provincia:</span><select id="selectProvCorrelacion" onchange="updateCorrelacionChart()"><option value="todas">Todas</option><option value="Alicante">Alicante</option><option value="Castellón">Castellón</option><option value="Valencia">Valencia</option></select></div>
                 </div>
-                <div class="chart-container tall">
-                    <canvas id="chartCorrelacion"></canvas>
-                </div>
-                <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
-                    <strong>Correlación de Pearson: r = -0.983</strong> (p < 0.001) | 
-                    <span style="color: var(--text-light);">Correlación negativa muy fuerte</span>
-                </div>
+                <div class="chart-container tall"><canvas id="chartCorrelacion"></canvas></div>
+                <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;"><strong>Correlación de Pearson: r = -0.983</strong> (p < 0.001)</div>
             </div>
-            
-            <div class="hallazgo">
-                <div class="hallazgo-title">💡 Hallazgo Principal</div>
-                <p>Existe una <strong>correlación negativa casi perfecta (r = -0.983)</strong> entre mortalidad y esperanza de vida, validando la coherencia interna del dataset. Se observan <strong>dos nubes claramente separadas</strong> por sexo sin solapamiento: mujeres (arriba-izquierda: baja mortalidad, alta EV) y hombres (abajo-derecha: alta mortalidad, baja EV). Esta separación absoluta confirma la magnitud de la disparidad de género.</p>
-            </div>
+            <div class="hallazgo"><div class="hallazgo-title">💡 Hallazgo Principal</div><p>Existe una <strong>correlación negativa casi perfecta (r = -0.983)</strong>. Se observan <strong>dos nubes claramente separadas</strong> por sexo sin solapamiento.</p></div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="footer-grid">
-            <div class="footer-item">
-                <div class="footer-label">Autor</div>
-                <div class="footer-value">Cristóbal E. Aguilar Gallardo</div>
-            </div>
-            <div class="footer-item">
-                <div class="footer-label">Fuente</div>
-                <div class="footer-value"><a href="https://pegv.gva.es/" target="_blank">Portal Estadístico GVA</a></div>
-            </div>
-            <div class="footer-item">
-                <div class="footer-label">Registros</div>
-                <div class="footer-value">5.880</div>
-            </div>
-            <div class="footer-item">
-                <div class="footer-label">Período</div>
-                <div class="footer-value">2010-2023</div>
-            </div>
+            <div class="footer-item"><div class="footer-label">Autor</div><div class="footer-value">Cristóbal E. Aguilar Gallardo</div></div>
+            <div class="footer-item"><div class="footer-label">Fuente</div><div class="footer-value"><a href="https://pegv.gva.es/" target="_blank">Portal Estadístico GVA</a></div></div>
+            <div class="footer-item"><div class="footer-label">Registros</div><div class="footer-value">5.880</div></div>
+            <div class="footer-item"><div class="footer-label">Período</div><div class="footer-value">2010-2023</div></div>
         </div>
         <p style="opacity: 0.8;">Visualización de Datos - Parte II | Enero 2026</p>
     </footer>
-
     <script>
-        // =============================================
-        // DATOS COMPLETOS
-        // =============================================
         const años = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-        
         const datosTemporales = {
             ambos: [857.16, 845.74, 857.60, 843.53, 822.75, 852.28, 836.43, 847.85, 851.95, 862.20, 902.61, 907.83, 877.91, 819.88],
             hombres: [1007.30, 991.23, 1000.65, 983.77, 958.41, 993.93, 974.79, 987.85, 993.87, 1003.30, 1054.57, 1062.28, 1025.12, 955.50],
             mujeres: [731.05, 722.99, 736.46, 725.24, 708.56, 732.43, 718.79, 728.61, 731.10, 741.74, 771.68, 774.71, 751.18, 703.35]
         };
-        
         const evPorSexo = {
             hombres: [18.9, 19.1, 19.0, 19.2, 19.4, 19.3, 19.5, 19.4, 19.4, 19.3, 18.8, 18.8, 19.1, 19.6],
             mujeres: [22.8, 23.0, 22.9, 23.1, 23.3, 23.1, 23.3, 23.2, 23.2, 23.1, 22.7, 22.6, 22.9, 23.4]
         };
-        
         const suicidioData = {
             ambos: [7.02, 6.14, 7.21, 7.45, 7.38, 7.65, 7.12, 7.34, 7.89, 7.45, 7.12, 8.01, 7.95, 7.81],
             hombres: [11.5, 10.2, 11.8, 12.1, 11.9, 12.4, 11.5, 11.9, 12.8, 12.1, 11.5, 13.0, 12.9, 12.7],
             mujeres: [3.1, 2.5, 3.1, 3.3, 3.3, 3.4, 3.2, 3.2, 3.5, 3.2, 3.1, 3.5, 3.5, 3.4]
         };
+        const causas = { nombres: ['Cáncer', 'Cardiopatía Isquémica', 'Enf. Cerebrovascular', 'Suicidio'], tasas: [228.8, 68.5, 46.2, 7.8], colores: ['#ef4444', '#f97316', '#eab308', '#8b5cf6'], cambios: [-1.2, -24.0, -22.8, 11.2] };
+        const ratioGenero = { causas: ['Suicidio', 'Cardiopatía Isquémica', 'Cáncer', 'Mortalidad General', 'Enf. Cerebrovascular'], ratios: [3.11, 2.29, 2.08, 1.58, 1.22], colores: ['#dc2626', '#ea580c', '#f59e0b', '#84cc16', '#22c55e'] };
+        const tasasPorSexoCausa = { cancer: { h: 307.5, m: 161.2 }, cardio: { h: 95.8, m: 45.6 }, cerebro: { h: 51.2, m: 42.1 }, suicidio: { h: 12.1, m: 3.9 } };
         
-        const causas = {
-            nombres: ['Cáncer', 'Cardiopatía Isquémica', 'Enf. Cerebrovascular', 'Suicidio'],
-            tasas: [228.8, 68.5, 46.2, 7.8],
-            colores: ['#ef4444', '#f97316', '#eab308', '#8b5cf6'],
-            cambios: [-1.2, -24.0, -22.8, 11.2]
-        };
-        
-        const ratioGenero = {
-            causas: ['Suicidio', 'Cardiopatía Isquémica', 'Cáncer', 'Mortalidad General', 'Enf. Cerebrovascular'],
-            ratios: [3.11, 2.29, 2.08, 1.58, 1.22],
-            colores: ['#dc2626', '#ea580c', '#f59e0b', '#84cc16', '#22c55e']
-        };
-        
-        const tasasPorSexoCausa = {
-            cancer: { h: 307.5, m: 161.2 },
-            cardio: { h: 95.8, m: 45.6 },
-            cerebro: { h: 51.2, m: 42.1 },
-            suicidio: { h: 12.1, m: 3.9 }
-        };
-        
+        // DATOS CORREGIDOS - Coinciden con el heatmap
         const departamentos = {
-            nombres: ['Doctor Peset', 'Arnau de Vilanova', 'La Fe', 'Manises', 'Torrevieja', 'Elx-Crevillent', 'Sant Joan dAlacant', 'Valencia-Clínico', 'La Marina Baixa', 'Sagunto', 'Alcoi', 'Xàtiva-Ontinyent', 'Orihuela', 'Gandia', 'Requena', 'Elda', 'Alacant-H.General', 'La Plana', 'Dénia', 'Castellón', 'H. General de Elche', 'Vinaròs', 'La Ribera', 'Valencia-H.General'],
-            tasas: [783, 798, 812, 825, 831, 838, 845, 852, 858, 865, 872, 878, 885, 891, 898, 905, 912, 918, 925, 932, 945, 958, 968, 975],
-            provincias: ['Valencia', 'Valencia', 'Valencia', 'Valencia', 'Alicante', 'Alicante', 'Alicante', 'Valencia', 'Alicante', 'Valencia', 'Alicante', 'Valencia', 'Alicante', 'Valencia', 'Valencia', 'Alicante', 'Alicante', 'Castellón', 'Alicante', 'Castellón', 'Alicante', 'Castellón', 'Valencia', 'Valencia']
+            nombres: ['Doctor Peset', 'Torrevieja', 'Elx Hospital General', 'Clínic Malvarrosa', 'Alacant Hospital General', 'Valencia La Fe', 'Marina Baixa', 'Vinarós', 'Castelló', 'Sant Joan', 'Dénia', 'Elda', 'Alcoi', 'Valencia Hospital General', 'La Plana', 'Elx-Crevillent', 'Requena', 'Orihuela', 'Sagunt', 'Vilanova', 'Gandia', 'Manises', 'Xàtiva-Ontinyent', 'Ribera'],
+            tasas: [783.1, 794.4, 805.9, 825.9, 835.7, 836.2, 837.9, 849.0, 849.6, 850.3, 877.0, 881.0, 885.2, 893.3, 902.2, 911.6, 912.4, 914.6, 916.7, 935.0, 937.5, 937.9, 938.3, 975.2],
+            provincias: ['Valencia', 'Alicante', 'Alicante', 'Valencia', 'Alicante', 'Valencia', 'Alicante', 'Castellón', 'Castellón', 'Alicante', 'Alicante', 'Alicante', 'Alicante', 'Valencia', 'Castellón', 'Alicante', 'Valencia', 'Alicante', 'Valencia', 'Valencia', 'Valencia', 'Valencia', 'Valencia', 'Valencia']
         };
         
-        const provinciasData = {
-            alicante: [842, 831, 845, 830, 810, 838, 822, 833, 837, 848, 888, 893, 863, 805],
-            valencia: [872, 860, 872, 858, 837, 867, 851, 862, 867, 878, 918, 923, 893, 835],
-            castellon: [858, 846, 860, 845, 825, 853, 837, 848, 853, 864, 904, 909, 879, 821]
-        };
+        const provinciasData = { alicante: [842, 831, 845, 830, 810, 838, 822, 833, 837, 848, 888, 893, 863, 805], valencia: [872, 860, 872, 858, 837, 867, 851, 862, 867, 878, 918, 923, 893, 835], castellon: [858, 846, 860, 845, 825, 853, 837, 848, 853, 864, 904, 909, 879, 821] };
         
-                // DATOS REALES DEL HEATMAP (extraídos del CSV)
         const heatmapData = {
             "Ribera": [998.2, 1009.3, 1038.6, 937.8, 954.9, 1005.2, 963.7, 958.8, 979.3, 916.6, 946.2, 1001.8, 1003.1, 939.1],
             "Xàtiva-Ontinyent": [1002.1, 957.2, 1029.4, 879.7, 873.3, 987.2, 913.7, 973.9, 938.8, 891.3, 968.7, 917.2, 930.3, 873.7],
@@ -863,1419 +334,197 @@
             "Torrevieja": [649.2, 631.1, 797.7, 742.5, 781.6, 786.6, 767.2, 879.6, 840.5, 765.7, 880.6, 939.3, 839.6, 819.8],
             "Doctor Peset": [883.2, 920.9, 820.3, 765.7, 771.2, 815.2, 730.9, 773.3, 747.1, 703.5, 799.8, 773.9, 747.0, 711.7],
         };
+        const covidData = { periodos: ['Pre-COVID', '2020', '2021', 'Post-COVID'], valores: [857.1, 902.6, 907.8, 848.9], variaciones: [0, 5.3, 5.9, -1.0] };
         
-        const covidData = {
-            periodos: ['Pre-COVID', '2020', '2021', 'Post-COVID'],
-            valores: [857.1, 902.6, 907.8, 848.9],
-            variaciones: [0, 5.3, 5.9, -1.0]
-        };
-        
-                // DATOS REALES SCATTER CORRELACIÓN (extraídos del CSV)
-        const provincias = ["Alicante", "Castellón", "Valencia"];
+        // Scatter data simplificado
         const scatterData = {
-            hombres: [
-                {x: 1208.8, y: 18.1, año: 2010, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1170.3, y: 18.1, año: 2010, dept: "Alcoi", prov: "Alicante"},
-                {x: 1210.8, y: 17.9, año: 2010, dept: "Elda", prov: "Alicante"},
-                {x: 1014.1, y: 19.4, año: 2010, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1297.6, y: 17.4, año: 2010, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 980.7, y: 20.2, año: 2010, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1206.8, y: 18.2, año: 2010, dept: "Orihuela", prov: "Alicante"},
-                {x: 1067.7, y: 19.2, año: 2010, dept: "Sant Joan", prov: "Alicante"},
-                {x: 767.6, y: 23.7, año: 2010, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1072.2, y: 19.1, año: 2010, dept: "Castelló", prov: "Castellón"},
-                {x: 1186.2, y: 18.2, año: 2010, dept: "La Plana", prov: "Castellón"},
-                {x: 1151.6, y: 18.6, año: 2010, dept: "Vinarós", prov: "Castellón"},
-                {x: 1219.1, y: 17.8, año: 2010, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1120.9, y: 18.8, año: 2010, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1060.2, y: 19.6, año: 2010, dept: "Dénia", prov: "Valencia"},
-                {x: 1220.5, y: 18.0, año: 2010, dept: "Gandia", prov: "Valencia"},
-                {x: 1196.8, y: 18.2, año: 2010, dept: "Manises", prov: "Valencia"},
-                {x: 1232.7, y: 18.2, año: 2010, dept: "Requena", prov: "Valencia"},
-                {x: 1263.7, y: 17.7, año: 2010, dept: "Ribera", prov: "Valencia"},
-                {x: 1124.0, y: 18.8, año: 2010, dept: "Sagunt", prov: "Valencia"},
-                {x: 1219.5, y: 18.1, año: 2010, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1317.7, y: 17.4, año: 2010, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1217.0, y: 18.0, año: 2010, dept: "Vilanova", prov: "Valencia"},
-                {x: 1300.8, y: 17.6, año: 2010, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1228.0, y: 18.1, año: 2011, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1180.3, y: 18.3, año: 2011, dept: "Alcoi", prov: "Alicante"},
-                {x: 1072.9, y: 19.1, año: 2011, dept: "Elda", prov: "Alicante"},
-                {x: 1062.9, y: 19.2, año: 2011, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1117.0, y: 18.5, año: 2011, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 971.5, y: 20.7, año: 2011, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1278.0, y: 17.7, año: 2011, dept: "Orihuela", prov: "Alicante"},
-                {x: 1033.3, y: 19.6, año: 2011, dept: "Sant Joan", prov: "Alicante"},
-                {x: 759.3, y: 25.1, año: 2011, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1071.8, y: 19.1, año: 2011, dept: "Castelló", prov: "Castellón"},
-                {x: 1250.0, y: 17.8, año: 2011, dept: "La Plana", prov: "Castellón"},
-                {x: 1106.2, y: 18.9, año: 2011, dept: "Vinarós", prov: "Castellón"},
-                {x: 1135.8, y: 18.7, año: 2011, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1241.0, y: 17.8, año: 2011, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1026.6, y: 20.7, año: 2011, dept: "Dénia", prov: "Valencia"},
-                {x: 1244.4, y: 17.8, año: 2011, dept: "Gandia", prov: "Valencia"},
-                {x: 1146.1, y: 18.4, año: 2011, dept: "Manises", prov: "Valencia"},
-                {x: 1189.2, y: 18.4, año: 2011, dept: "Requena", prov: "Valencia"},
-                {x: 1281.2, y: 17.6, año: 2011, dept: "Ribera", prov: "Valencia"},
-                {x: 1164.8, y: 18.2, año: 2011, dept: "Sagunt", prov: "Valencia"},
-                {x: 1240.9, y: 17.8, año: 2011, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1120.2, y: 18.8, año: 2011, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1162.7, y: 18.3, año: 2011, dept: "Vilanova", prov: "Valencia"},
-                {x: 1229.0, y: 17.8, año: 2011, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1218.9, y: 17.8, año: 2012, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1264.6, y: 17.5, año: 2012, dept: "Alcoi", prov: "Alicante"},
-                {x: 1204.7, y: 18.1, año: 2012, dept: "Elda", prov: "Alicante"},
-                {x: 1163.1, y: 18.7, año: 2012, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1246.6, y: 17.9, año: 2012, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1199.3, y: 18.0, año: 2012, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1193.2, y: 18.3, año: 2012, dept: "Orihuela", prov: "Alicante"},
-                {x: 1127.8, y: 18.5, año: 2012, dept: "Sant Joan", prov: "Alicante"},
-                {x: 973.5, y: 20.6, año: 2012, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1144.2, y: 18.7, año: 2012, dept: "Castelló", prov: "Castellón"},
-                {x: 1163.3, y: 18.4, año: 2012, dept: "La Plana", prov: "Castellón"},
-                {x: 1170.7, y: 18.6, año: 2012, dept: "Vinarós", prov: "Castellón"},
-                {x: 1141.8, y: 18.7, año: 2012, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1094.7, y: 19.0, año: 2012, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1162.5, y: 18.5, año: 2012, dept: "Dénia", prov: "Valencia"},
-                {x: 1253.4, y: 17.9, año: 2012, dept: "Gandia", prov: "Valencia"},
-                {x: 1275.1, y: 17.8, año: 2012, dept: "Manises", prov: "Valencia"},
-                {x: 1026.4, y: 19.7, año: 2012, dept: "Requena", prov: "Valencia"},
-                {x: 1344.0, y: 17.3, año: 2012, dept: "Ribera", prov: "Valencia"},
-                {x: 1230.4, y: 18.0, año: 2012, dept: "Sagunt", prov: "Valencia"},
-                {x: 1167.6, y: 18.5, año: 2012, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1155.9, y: 18.4, año: 2012, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1186.8, y: 18.2, año: 2012, dept: "Vilanova", prov: "Valencia"},
-                {x: 1257.5, y: 17.8, año: 2012, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1075.5, y: 19.0, año: 2013, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1150.0, y: 18.1, año: 2013, dept: "Alcoi", prov: "Alicante"},
-                {x: 1065.0, y: 19.3, año: 2013, dept: "Elda", prov: "Alicante"},
-                {x: 1089.0, y: 19.0, año: 2013, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1097.3, y: 18.9, año: 2013, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1050.9, y: 19.5, año: 2013, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1021.7, y: 19.7, año: 2013, dept: "Orihuela", prov: "Alicante"},
-                {x: 1106.0, y: 18.9, año: 2013, dept: "Sant Joan", prov: "Alicante"},
-                {x: 905.5, y: 21.5, año: 2013, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1086.8, y: 19.2, año: 2013, dept: "Castelló", prov: "Castellón"},
-                {x: 1088.9, y: 18.9, año: 2013, dept: "La Plana", prov: "Castellón"},
-                {x: 1116.0, y: 18.8, año: 2013, dept: "Vinarós", prov: "Castellón"},
-                {x: 1088.6, y: 18.8, año: 2013, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1010.4, y: 19.9, año: 2013, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1038.1, y: 19.6, año: 2013, dept: "Dénia", prov: "Valencia"},
-                {x: 1169.5, y: 18.3, año: 2013, dept: "Gandia", prov: "Valencia"},
-                {x: 1097.9, y: 18.8, año: 2013, dept: "Manises", prov: "Valencia"},
-                {x: 1034.8, y: 19.0, año: 2013, dept: "Requena", prov: "Valencia"},
-                {x: 1198.8, y: 18.1, año: 2013, dept: "Ribera", prov: "Valencia"},
-                {x: 1102.5, y: 19.2, año: 2013, dept: "Sagunt", prov: "Valencia"},
-                {x: 1158.5, y: 18.4, año: 2013, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1056.2, y: 19.2, año: 2013, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1177.4, y: 18.1, año: 2013, dept: "Vilanova", prov: "Valencia"},
-                {x: 1046.7, y: 19.2, año: 2013, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1139.8, y: 18.6, año: 2014, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1098.0, y: 18.7, año: 2014, dept: "Alcoi", prov: "Alicante"},
-                {x: 1071.9, y: 19.1, año: 2014, dept: "Elda", prov: "Alicante"},
-                {x: 976.6, y: 20.1, año: 2014, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1087.0, y: 18.9, año: 2014, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1007.4, y: 19.9, año: 2014, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1049.0, y: 19.3, año: 2014, dept: "Orihuela", prov: "Alicante"},
-                {x: 1077.7, y: 18.8, año: 2014, dept: "Sant Joan", prov: "Alicante"},
-                {x: 921.0, y: 21.2, año: 2014, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1041.8, y: 19.3, año: 2014, dept: "Castelló", prov: "Castellón"},
-                {x: 1132.3, y: 18.5, año: 2014, dept: "La Plana", prov: "Castellón"},
-                {x: 1084.0, y: 19.3, año: 2014, dept: "Vinarós", prov: "Castellón"},
-                {x: 1118.3, y: 18.8, año: 2014, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1008.1, y: 19.8, año: 2014, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1070.1, y: 19.3, año: 2014, dept: "Dénia", prov: "Valencia"},
-                {x: 1173.8, y: 18.2, año: 2014, dept: "Gandia", prov: "Valencia"},
-                {x: 1127.5, y: 18.5, año: 2014, dept: "Manises", prov: "Valencia"},
-                {x: 1198.4, y: 18.4, año: 2014, dept: "Requena", prov: "Valencia"},
-                {x: 1215.6, y: 18.0, año: 2014, dept: "Ribera", prov: "Valencia"},
-                {x: 1049.3, y: 19.5, año: 2014, dept: "Sagunt", prov: "Valencia"},
-                {x: 1135.4, y: 18.7, año: 2014, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1060.6, y: 19.1, año: 2014, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1139.5, y: 18.4, año: 2014, dept: "Vilanova", prov: "Valencia"},
-                {x: 1028.2, y: 19.2, año: 2014, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1164.4, y: 18.3, año: 2015, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1172.6, y: 18.3, año: 2015, dept: "Alcoi", prov: "Alicante"},
-                {x: 1160.9, y: 18.5, año: 2015, dept: "Elda", prov: "Alicante"},
-                {x: 1047.7, y: 19.1, año: 2015, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1262.7, y: 17.3, año: 2015, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1066.8, y: 18.9, año: 2015, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1248.3, y: 17.5, año: 2015, dept: "Orihuela", prov: "Alicante"},
-                {x: 1175.0, y: 18.6, año: 2015, dept: "Sant Joan", prov: "Alicante"},
-                {x: 924.8, y: 21.1, año: 2015, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1197.1, y: 18.2, año: 2015, dept: "Castelló", prov: "Castellón"},
-                {x: 1169.5, y: 18.4, año: 2015, dept: "La Plana", prov: "Castellón"},
-                {x: 1085.8, y: 19.2, año: 2015, dept: "Vinarós", prov: "Castellón"},
-                {x: 1125.5, y: 18.7, año: 2015, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1106.6, y: 18.9, año: 2015, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1150.1, y: 18.6, año: 2015, dept: "Dénia", prov: "Valencia"},
-                {x: 1318.5, y: 17.1, año: 2015, dept: "Gandia", prov: "Valencia"},
-                {x: 1264.1, y: 18.0, año: 2015, dept: "Manises", prov: "Valencia"},
-                {x: 1114.8, y: 18.9, año: 2015, dept: "Requena", prov: "Valencia"},
-                {x: 1300.1, y: 17.4, año: 2015, dept: "Ribera", prov: "Valencia"},
-                {x: 1131.3, y: 18.5, año: 2015, dept: "Sagunt", prov: "Valencia"},
-                {x: 1158.6, y: 18.4, año: 2015, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1143.0, y: 18.6, año: 2015, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1200.2, y: 18.2, año: 2015, dept: "Vilanova", prov: "Valencia"},
-                {x: 1240.3, y: 17.8, año: 2015, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1107.6, y: 18.8, año: 2016, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1057.7, y: 19.3, año: 2016, dept: "Alcoi", prov: "Alicante"},
-                {x: 1072.1, y: 19.0, año: 2016, dept: "Elda", prov: "Alicante"},
-                {x: 961.1, y: 19.9, año: 2016, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1083.7, y: 18.8, año: 2016, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1055.3, y: 19.3, año: 2016, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 982.9, y: 19.6, año: 2016, dept: "Orihuela", prov: "Alicante"},
-                {x: 1031.5, y: 19.0, año: 2016, dept: "Sant Joan", prov: "Alicante"},
-                {x: 943.9, y: 20.9, año: 2016, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1089.2, y: 19.0, año: 2016, dept: "Castelló", prov: "Castellón"},
-                {x: 1101.3, y: 18.8, año: 2016, dept: "La Plana", prov: "Castellón"},
-                {x: 1008.9, y: 19.7, año: 2016, dept: "Vinarós", prov: "Castellón"},
-                {x: 1037.8, y: 19.6, año: 2016, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 982.1, y: 20.0, año: 2016, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1086.8, y: 19.3, año: 2016, dept: "Dénia", prov: "Valencia"},
-                {x: 1310.9, y: 17.5, año: 2016, dept: "Gandia", prov: "Valencia"},
-                {x: 1071.2, y: 19.1, año: 2016, dept: "Manises", prov: "Valencia"},
-                {x: 1027.1, y: 19.1, año: 2016, dept: "Requena", prov: "Valencia"},
-                {x: 1189.1, y: 18.3, año: 2016, dept: "Ribera", prov: "Valencia"},
-                {x: 1147.4, y: 18.8, año: 2016, dept: "Sagunt", prov: "Valencia"},
-                {x: 1153.6, y: 18.5, año: 2016, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1103.1, y: 18.8, año: 2016, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1161.8, y: 18.3, año: 2016, dept: "Vilanova", prov: "Valencia"},
-                {x: 1124.3, y: 18.6, año: 2016, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1072.4, y: 19.2, año: 2017, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1115.5, y: 18.7, año: 2017, dept: "Alcoi", prov: "Alicante"},
-                {x: 1106.2, y: 19.0, año: 2017, dept: "Elda", prov: "Alicante"},
-                {x: 978.3, y: 19.8, año: 2017, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1079.4, y: 18.9, año: 2017, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1120.6, y: 18.9, año: 2017, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1061.2, y: 18.8, año: 2017, dept: "Orihuela", prov: "Alicante"},
-                {x: 1135.6, y: 18.6, año: 2017, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1045.8, y: 19.6, año: 2017, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1058.9, y: 19.4, año: 2017, dept: "Castelló", prov: "Castellón"},
-                {x: 1110.3, y: 18.8, año: 2017, dept: "La Plana", prov: "Castellón"},
-                {x: 1056.7, y: 19.4, año: 2017, dept: "Vinarós", prov: "Castellón"},
-                {x: 1118.3, y: 18.7, año: 2017, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1023.8, y: 19.4, año: 2017, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1230.0, y: 17.8, año: 2017, dept: "Dénia", prov: "Valencia"},
-                {x: 1316.7, y: 17.5, año: 2017, dept: "Gandia", prov: "Valencia"},
-                {x: 1227.4, y: 17.9, año: 2017, dept: "Manises", prov: "Valencia"},
-                {x: 1091.8, y: 19.3, año: 2017, dept: "Requena", prov: "Valencia"},
-                {x: 1229.2, y: 17.8, año: 2017, dept: "Ribera", prov: "Valencia"},
-                {x: 1114.2, y: 18.7, año: 2017, dept: "Sagunt", prov: "Valencia"},
-                {x: 1139.4, y: 18.6, año: 2017, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1083.7, y: 19.0, año: 2017, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1155.9, y: 18.3, año: 2017, dept: "Vilanova", prov: "Valencia"},
-                {x: 1193.7, y: 18.1, año: 2017, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1035.0, y: 19.4, año: 2018, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1149.8, y: 18.6, año: 2018, dept: "Alcoi", prov: "Alicante"},
-                {x: 1126.5, y: 18.8, año: 2018, dept: "Elda", prov: "Alicante"},
-                {x: 1024.7, y: 19.4, año: 2018, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1194.7, y: 17.9, año: 2018, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1046.7, y: 19.4, año: 2018, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1169.9, y: 18.4, año: 2018, dept: "Orihuela", prov: "Alicante"},
-                {x: 1094.0, y: 18.8, año: 2018, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1019.1, y: 20.4, año: 2018, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1093.1, y: 19.0, año: 2018, dept: "Castelló", prov: "Castellón"},
-                {x: 1172.1, y: 18.1, año: 2018, dept: "La Plana", prov: "Castellón"},
-                {x: 1141.3, y: 18.8, año: 2018, dept: "Vinarós", prov: "Castellón"},
-                {x: 1032.0, y: 19.4, año: 2018, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 991.5, y: 19.9, año: 2018, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1103.3, y: 18.8, año: 2018, dept: "Dénia", prov: "Valencia"},
-                {x: 1164.2, y: 18.1, año: 2018, dept: "Gandia", prov: "Valencia"},
-                {x: 1165.6, y: 18.6, año: 2018, dept: "Manises", prov: "Valencia"},
-                {x: 1004.7, y: 19.7, año: 2018, dept: "Requena", prov: "Valencia"},
-                {x: 1247.7, y: 17.8, año: 2018, dept: "Ribera", prov: "Valencia"},
-                {x: 1174.8, y: 18.3, año: 2018, dept: "Sagunt", prov: "Valencia"},
-                {x: 1126.3, y: 18.7, año: 2018, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1040.4, y: 19.4, año: 2018, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1109.6, y: 18.8, año: 2018, dept: "Vilanova", prov: "Valencia"},
-                {x: 1186.5, y: 18.3, año: 2018, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 975.9, y: 20.2, año: 2019, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 974.2, y: 19.9, año: 2019, dept: "Alcoi", prov: "Alicante"},
-                {x: 1034.9, y: 19.4, año: 2019, dept: "Elda", prov: "Alicante"},
-                {x: 938.7, y: 20.0, año: 2019, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 968.4, y: 20.1, año: 2019, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 954.2, y: 20.4, año: 2019, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1187.8, y: 17.9, año: 2019, dept: "Orihuela", prov: "Alicante"},
-                {x: 1000.0, y: 19.7, año: 2019, dept: "Sant Joan", prov: "Alicante"},
-                {x: 921.8, y: 20.9, año: 2019, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1021.4, y: 19.5, año: 2019, dept: "Castelló", prov: "Castellón"},
-                {x: 1034.2, y: 19.4, año: 2019, dept: "La Plana", prov: "Castellón"},
-                {x: 978.0, y: 20.3, año: 2019, dept: "Vinarós", prov: "Castellón"},
-                {x: 1006.0, y: 19.6, año: 2019, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 925.9, y: 20.7, año: 2019, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1070.4, y: 19.4, año: 2019, dept: "Dénia", prov: "Valencia"},
-                {x: 1174.8, y: 18.4, año: 2019, dept: "Gandia", prov: "Valencia"},
-                {x: 1097.7, y: 18.9, año: 2019, dept: "Manises", prov: "Valencia"},
-                {x: 1194.1, y: 17.9, año: 2019, dept: "Requena", prov: "Valencia"},
-                {x: 1178.7, y: 18.1, año: 2019, dept: "Ribera", prov: "Valencia"},
-                {x: 1119.2, y: 18.4, año: 2019, dept: "Sagunt", prov: "Valencia"},
-                {x: 1077.4, y: 19.1, año: 2019, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 950.3, y: 20.3, año: 2019, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1115.7, y: 18.4, año: 2019, dept: "Vilanova", prov: "Valencia"},
-                {x: 1101.1, y: 18.6, año: 2019, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1025.9, y: 19.4, año: 2020, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1097.7, y: 18.8, año: 2020, dept: "Alcoi", prov: "Alicante"},
-                {x: 1198.7, y: 18.3, año: 2020, dept: "Elda", prov: "Alicante"},
-                {x: 916.7, y: 20.6, año: 2020, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1040.7, y: 19.2, año: 2020, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1062.5, y: 19.5, año: 2020, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1209.5, y: 17.9, año: 2020, dept: "Orihuela", prov: "Alicante"},
-                {x: 1111.8, y: 18.5, año: 2020, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1076.4, y: 19.6, año: 2020, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1047.0, y: 19.3, año: 2020, dept: "Castelló", prov: "Castellón"},
-                {x: 1108.1, y: 18.5, año: 2020, dept: "La Plana", prov: "Castellón"},
-                {x: 957.1, y: 20.3, año: 2020, dept: "Vinarós", prov: "Castellón"},
-                {x: 1068.5, y: 19.0, año: 2020, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1052.5, y: 19.2, año: 2020, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1109.7, y: 18.8, año: 2020, dept: "Dénia", prov: "Valencia"},
-                {x: 1287.8, y: 17.5, año: 2020, dept: "Gandia", prov: "Valencia"},
-                {x: 1181.7, y: 18.3, año: 2020, dept: "Manises", prov: "Valencia"},
-                {x: 1202.3, y: 18.3, año: 2020, dept: "Requena", prov: "Valencia"},
-                {x: 1175.5, y: 18.4, año: 2020, dept: "Ribera", prov: "Valencia"},
-                {x: 1170.2, y: 18.1, año: 2020, dept: "Sagunt", prov: "Valencia"},
-                {x: 1176.8, y: 18.2, año: 2020, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1070.4, y: 19.1, año: 2020, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1147.7, y: 18.6, año: 2020, dept: "Vilanova", prov: "Valencia"},
-                {x: 1269.3, y: 17.7, año: 2020, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1046.5, y: 19.3, año: 2021, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1138.9, y: 18.5, año: 2021, dept: "Alcoi", prov: "Alicante"},
-                {x: 1067.0, y: 18.9, año: 2021, dept: "Elda", prov: "Alicante"},
-                {x: 998.9, y: 19.7, año: 2021, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1153.5, y: 18.4, año: 2021, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 1098.4, y: 18.8, año: 2021, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1138.9, y: 18.4, año: 2021, dept: "Orihuela", prov: "Alicante"},
-                {x: 1101.1, y: 18.8, año: 2021, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1172.1, y: 18.8, año: 2021, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1084.8, y: 19.1, año: 2021, dept: "Castelló", prov: "Castellón"},
-                {x: 1181.1, y: 18.3, año: 2021, dept: "La Plana", prov: "Castellón"},
-                {x: 1024.9, y: 19.8, año: 2021, dept: "Vinarós", prov: "Castellón"},
-                {x: 1079.0, y: 18.8, año: 2021, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1021.7, y: 19.5, año: 2021, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 1104.7, y: 19.0, año: 2021, dept: "Dénia", prov: "Valencia"},
-                {x: 1222.8, y: 17.9, año: 2021, dept: "Gandia", prov: "Valencia"},
-                {x: 1218.2, y: 17.8, año: 2021, dept: "Manises", prov: "Valencia"},
-                {x: 1042.9, y: 19.1, año: 2021, dept: "Requena", prov: "Valencia"},
-                {x: 1283.2, y: 17.3, año: 2021, dept: "Ribera", prov: "Valencia"},
-                {x: 1187.3, y: 18.3, año: 2021, dept: "Sagunt", prov: "Valencia"},
-                {x: 1182.2, y: 18.2, año: 2021, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1005.8, y: 19.8, año: 2021, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1114.6, y: 18.8, año: 2021, dept: "Vilanova", prov: "Valencia"},
-                {x: 1179.2, y: 18.2, año: 2021, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 1051.9, y: 19.2, año: 2022, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1165.3, y: 18.0, año: 2022, dept: "Alcoi", prov: "Alicante"},
-                {x: 1106.1, y: 18.5, año: 2022, dept: "Elda", prov: "Alicante"},
-                {x: 956.8, y: 20.1, año: 2022, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 1143.2, y: 18.7, año: 2022, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 972.4, y: 20.4, año: 2022, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1178.2, y: 18.1, año: 2022, dept: "Orihuela", prov: "Alicante"},
-                {x: 1011.3, y: 19.7, año: 2022, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1022.9, y: 20.3, año: 2022, dept: "Torrevieja", prov: "Alicante"},
-                {x: 1077.4, y: 19.1, año: 2022, dept: "Castelló", prov: "Castellón"},
-                {x: 1135.6, y: 18.4, año: 2022, dept: "La Plana", prov: "Castellón"},
-                {x: 991.9, y: 20.1, año: 2022, dept: "Vinarós", prov: "Castellón"},
-                {x: 1002.9, y: 19.6, año: 2022, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 1006.7, y: 19.6, año: 2022, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 939.4, y: 20.8, año: 2022, dept: "Dénia", prov: "Valencia"},
-                {x: 1158.0, y: 18.6, año: 2022, dept: "Gandia", prov: "Valencia"},
-                {x: 1180.9, y: 18.1, año: 2022, dept: "Manises", prov: "Valencia"},
-                {x: 1008.4, y: 19.3, año: 2022, dept: "Requena", prov: "Valencia"},
-                {x: 1267.4, y: 17.6, año: 2022, dept: "Ribera", prov: "Valencia"},
-                {x: 1143.5, y: 18.6, año: 2022, dept: "Sagunt", prov: "Valencia"},
-                {x: 1176.5, y: 18.4, año: 2022, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 1023.5, y: 19.5, año: 2022, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1176.3, y: 18.4, año: 2022, dept: "Vilanova", prov: "Valencia"},
-                {x: 1157.7, y: 18.5, año: 2022, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 949.4, y: 20.1, año: 2023, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 1012.1, y: 19.5, año: 2023, dept: "Alcoi", prov: "Alicante"},
-                {x: 1030.2, y: 19.3, año: 2023, dept: "Elda", prov: "Alicante"},
-                {x: 888.5, y: 20.7, año: 2023, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 935.7, y: 20.4, año: 2023, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 916.5, y: 21.2, año: 2023, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 1034.3, y: 19.4, año: 2023, dept: "Orihuela", prov: "Alicante"},
-                {x: 959.2, y: 19.9, año: 2023, dept: "Sant Joan", prov: "Alicante"},
-                {x: 1001.6, y: 20.6, año: 2023, dept: "Torrevieja", prov: "Alicante"},
-                {x: 977.7, y: 19.9, año: 2023, dept: "Castelló", prov: "Castellón"},
-                {x: 1025.0, y: 19.2, año: 2023, dept: "La Plana", prov: "Castellón"},
-                {x: 976.2, y: 19.9, año: 2023, dept: "Vinarós", prov: "Castellón"},
-                {x: 917.4, y: 20.4, año: 2023, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 930.3, y: 20.5, año: 2023, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 969.1, y: 20.2, año: 2023, dept: "Dénia", prov: "Valencia"},
-                {x: 1093.7, y: 19.1, año: 2023, dept: "Gandia", prov: "Valencia"},
-                {x: 1083.6, y: 19.1, año: 2023, dept: "Manises", prov: "Valencia"},
-                {x: 1096.6, y: 18.8, año: 2023, dept: "Requena", prov: "Valencia"},
-                {x: 1159.1, y: 18.2, año: 2023, dept: "Ribera", prov: "Valencia"},
-                {x: 1153.5, y: 18.6, año: 2023, dept: "Sagunt", prov: "Valencia"},
-                {x: 1028.4, y: 19.5, año: 2023, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 997.2, y: 19.8, año: 2023, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 1032.6, y: 19.4, año: 2023, dept: "Vilanova", prov: "Valencia"},
-                {x: 1081.2, y: 19.1, año: 2023, dept: "Xàtiva-Ontinyent", prov: "Valencia"}
-            ],
-            mujeres: [
-                {x: 672.0, y: 23.1, año: 2010, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 751.2, y: 22.2, año: 2010, dept: "Alcoi", prov: "Alicante"},
-                {x: 717.6, y: 22.3, año: 2010, dept: "Elda", prov: "Alicante"},
-                {x: 619.9, y: 23.7, año: 2010, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 925.1, y: 20.4, año: 2010, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 645.7, y: 24.3, año: 2010, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 815.5, y: 21.2, año: 2010, dept: "Orihuela", prov: "Alicante"},
-                {x: 632.2, y: 23.5, año: 2010, dept: "Sant Joan", prov: "Alicante"},
-                {x: 532.6, y: 26.3, año: 2010, dept: "Torrevieja", prov: "Alicante"},
-                {x: 691.7, y: 22.9, año: 2010, dept: "Castelló", prov: "Castellón"},
-                {x: 767.0, y: 22.0, año: 2010, dept: "La Plana", prov: "Castellón"},
-                {x: 673.3, y: 23.0, año: 2010, dept: "Vinarós", prov: "Castellón"},
-                {x: 690.4, y: 22.8, año: 2010, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 719.8, y: 22.5, año: 2010, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 702.4, y: 22.9, año: 2010, dept: "Dénia", prov: "Valencia"},
-                {x: 693.8, y: 23.1, año: 2010, dept: "Gandia", prov: "Valencia"},
-                {x: 743.7, y: 22.1, año: 2010, dept: "Manises", prov: "Valencia"},
-                {x: 866.6, y: 20.8, año: 2010, dept: "Requena", prov: "Valencia"},
-                {x: 794.1, y: 21.7, año: 2010, dept: "Ribera", prov: "Valencia"},
-                {x: 704.5, y: 22.5, año: 2010, dept: "Sagunt", prov: "Valencia"},
-                {x: 718.5, y: 22.6, año: 2010, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 657.6, y: 23.3, año: 2010, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 741.9, y: 22.3, año: 2010, dept: "Vilanova", prov: "Valencia"},
-                {x: 771.5, y: 21.9, año: 2010, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 741.1, y: 22.3, año: 2011, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 713.8, y: 22.5, año: 2011, dept: "Alcoi", prov: "Alicante"},
-                {x: 707.2, y: 22.9, año: 2011, dept: "Elda", prov: "Alicante"},
-                {x: 641.5, y: 23.3, año: 2011, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 725.3, y: 22.5, año: 2011, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 637.6, y: 24.2, año: 2011, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 809.6, y: 21.5, año: 2011, dept: "Orihuela", prov: "Alicante"},
-                {x: 672.7, y: 23.3, año: 2011, dept: "Sant Joan", prov: "Alicante"},
-                {x: 501.3, y: 27.5, año: 2011, dept: "Torrevieja", prov: "Alicante"},
-                {x: 656.5, y: 23.3, año: 2011, dept: "Castelló", prov: "Castellón"},
-                {x: 748.0, y: 22.1, año: 2011, dept: "La Plana", prov: "Castellón"},
-                {x: 716.2, y: 22.4, año: 2011, dept: "Vinarós", prov: "Castellón"},
-                {x: 665.6, y: 23.3, año: 2011, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 711.3, y: 22.8, año: 2011, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 650.8, y: 24.1, año: 2011, dept: "Dénia", prov: "Valencia"},
-                {x: 698.3, y: 23.1, año: 2011, dept: "Gandia", prov: "Valencia"},
-                {x: 765.4, y: 21.6, año: 2011, dept: "Manises", prov: "Valencia"},
-                {x: 811.6, y: 21.6, año: 2011, dept: "Requena", prov: "Valencia"},
-                {x: 798.6, y: 21.5, año: 2011, dept: "Ribera", prov: "Valencia"},
-                {x: 717.3, y: 22.6, año: 2011, dept: "Sagunt", prov: "Valencia"},
-                {x: 691.4, y: 23.0, año: 2011, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 680.9, y: 23.0, año: 2011, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 728.4, y: 22.2, año: 2011, dept: "Vilanova", prov: "Valencia"},
-                {x: 758.2, y: 22.0, año: 2011, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 695.4, y: 22.8, año: 2012, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 762.5, y: 22.1, año: 2012, dept: "Alcoi", prov: "Alicante"},
-                {x: 805.1, y: 21.4, año: 2012, dept: "Elda", prov: "Alicante"},
-                {x: 675.4, y: 22.8, año: 2012, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 799.6, y: 21.6, año: 2012, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 719.3, y: 22.4, año: 2012, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 673.6, y: 23.2, año: 2012, dept: "Orihuela", prov: "Alicante"},
-                {x: 692.3, y: 22.7, año: 2012, dept: "Sant Joan", prov: "Alicante"},
-                {x: 631.6, y: 24.0, año: 2012, dept: "Torrevieja", prov: "Alicante"},
-                {x: 665.5, y: 23.1, año: 2012, dept: "Castelló", prov: "Castellón"},
-                {x: 715.9, y: 22.4, año: 2012, dept: "La Plana", prov: "Castellón"},
-                {x: 659.6, y: 22.9, año: 2012, dept: "Vinarós", prov: "Castellón"},
-                {x: 673.1, y: 23.1, año: 2012, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 632.8, y: 23.9, año: 2012, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 772.6, y: 22.1, año: 2012, dept: "Dénia", prov: "Valencia"},
-                {x: 771.0, y: 21.8, año: 2012, dept: "Gandia", prov: "Valencia"},
-                {x: 804.6, y: 21.5, año: 2012, dept: "Manises", prov: "Valencia"},
-                {x: 781.4, y: 21.8, año: 2012, dept: "Requena", prov: "Valencia"},
-                {x: 796.5, y: 21.6, año: 2012, dept: "Ribera", prov: "Valencia"},
-                {x: 717.6, y: 22.4, año: 2012, dept: "Sagunt", prov: "Valencia"},
-                {x: 747.3, y: 22.3, año: 2012, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 681.9, y: 22.8, año: 2012, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 842.7, y: 20.9, año: 2012, dept: "Vilanova", prov: "Valencia"},
-                {x: 849.2, y: 20.8, año: 2012, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 635.3, y: 24.1, año: 2013, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 733.8, y: 22.2, año: 2013, dept: "Alcoi", prov: "Alicante"},
-                {x: 682.5, y: 22.9, año: 2013, dept: "Elda", prov: "Alicante"},
-                {x: 652.9, y: 23.6, año: 2013, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 770.5, y: 21.7, año: 2013, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 649.5, y: 23.5, año: 2013, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 751.3, y: 22.0, año: 2013, dept: "Orihuela", prov: "Alicante"},
-                {x: 707.9, y: 22.8, año: 2013, dept: "Sant Joan", prov: "Alicante"},
-                {x: 589.4, y: 25.4, año: 2013, dept: "Torrevieja", prov: "Alicante"},
-                {x: 675.8, y: 23.0, año: 2013, dept: "Castelló", prov: "Castellón"},
-                {x: 703.1, y: 22.4, año: 2013, dept: "La Plana", prov: "Castellón"},
-                {x: 659.3, y: 23.4, año: 2013, dept: "Vinarós", prov: "Castellón"},
-                {x: 641.0, y: 23.9, año: 2013, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 600.4, y: 24.7, año: 2013, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 706.9, y: 22.7, año: 2013, dept: "Dénia", prov: "Valencia"},
-                {x: 730.8, y: 22.2, año: 2013, dept: "Gandia", prov: "Valencia"},
-                {x: 701.8, y: 22.7, año: 2013, dept: "Manises", prov: "Valencia"},
-                {x: 739.1, y: 22.0, año: 2013, dept: "Requena", prov: "Valencia"},
-                {x: 725.6, y: 22.2, año: 2013, dept: "Ribera", prov: "Valencia"},
-                {x: 743.8, y: 22.0, año: 2013, dept: "Sagunt", prov: "Valencia"},
-                {x: 693.3, y: 23.0, año: 2013, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 675.7, y: 23.0, año: 2013, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 732.0, y: 22.1, año: 2013, dept: "Vilanova", prov: "Valencia"},
-                {x: 747.9, y: 22.1, año: 2013, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 683.1, y: 23.1, año: 2014, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 729.5, y: 22.3, año: 2014, dept: "Alcoi", prov: "Alicante"},
-                {x: 718.9, y: 22.1, año: 2014, dept: "Elda", prov: "Alicante"},
-                {x: 656.0, y: 23.3, año: 2014, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 657.6, y: 23.2, año: 2014, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 668.9, y: 23.5, año: 2014, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 682.8, y: 23.1, año: 2014, dept: "Orihuela", prov: "Alicante"},
-                {x: 681.3, y: 23.0, año: 2014, dept: "Sant Joan", prov: "Alicante"},
-                {x: 647.8, y: 23.9, año: 2014, dept: "Torrevieja", prov: "Alicante"},
-                {x: 697.4, y: 22.8, año: 2014, dept: "Castelló", prov: "Castellón"},
-                {x: 722.5, y: 22.1, año: 2014, dept: "La Plana", prov: "Castellón"},
-                {x: 670.9, y: 23.0, año: 2014, dept: "Vinarós", prov: "Castellón"},
-                {x: 644.7, y: 23.6, año: 2014, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 610.0, y: 24.4, año: 2014, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 703.0, y: 22.9, año: 2014, dept: "Dénia", prov: "Valencia"},
-                {x: 686.7, y: 22.8, año: 2014, dept: "Gandia", prov: "Valencia"},
-                {x: 744.8, y: 22.3, año: 2014, dept: "Manises", prov: "Valencia"},
-                {x: 703.0, y: 22.6, año: 2014, dept: "Requena", prov: "Valencia"},
-                {x: 744.7, y: 22.1, año: 2014, dept: "Ribera", prov: "Valencia"},
-                {x: 709.1, y: 22.8, año: 2014, dept: "Sagunt", prov: "Valencia"},
-                {x: 730.5, y: 22.2, año: 2014, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 690.5, y: 22.8, año: 2014, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 771.4, y: 21.7, año: 2014, dept: "Vilanova", prov: "Valencia"},
-                {x: 740.8, y: 21.8, año: 2014, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 687.5, y: 22.9, año: 2015, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 779.6, y: 21.8, año: 2015, dept: "Alcoi", prov: "Alicante"},
-                {x: 738.5, y: 22.1, año: 2015, dept: "Elda", prov: "Alicante"},
-                {x: 698.9, y: 22.6, año: 2015, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 706.9, y: 22.8, año: 2015, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 723.1, y: 22.6, año: 2015, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 728.7, y: 22.1, año: 2015, dept: "Orihuela", prov: "Alicante"},
-                {x: 728.0, y: 22.4, año: 2015, dept: "Sant Joan", prov: "Alicante"},
-                {x: 653.7, y: 23.8, año: 2015, dept: "Torrevieja", prov: "Alicante"},
-                {x: 717.0, y: 22.5, año: 2015, dept: "Castelló", prov: "Castellón"},
-                {x: 746.2, y: 21.9, año: 2015, dept: "La Plana", prov: "Castellón"},
-                {x: 742.1, y: 22.1, año: 2015, dept: "Vinarós", prov: "Castellón"},
-                {x: 671.9, y: 23.2, año: 2015, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 614.1, y: 24.1, año: 2015, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 742.7, y: 22.3, año: 2015, dept: "Dénia", prov: "Valencia"},
-                {x: 749.8, y: 22.0, año: 2015, dept: "Gandia", prov: "Valencia"},
-                {x: 787.1, y: 21.6, año: 2015, dept: "Manises", prov: "Valencia"},
-                {x: 738.6, y: 22.3, año: 2015, dept: "Requena", prov: "Valencia"},
-                {x: 784.6, y: 21.7, año: 2015, dept: "Ribera", prov: "Valencia"},
-                {x: 775.5, y: 21.8, año: 2015, dept: "Sagunt", prov: "Valencia"},
-                {x: 731.7, y: 22.4, año: 2015, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 698.8, y: 22.7, año: 2015, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 832.2, y: 21.1, año: 2015, dept: "Vilanova", prov: "Valencia"},
-                {x: 784.7, y: 21.4, año: 2015, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 653.9, y: 23.6, año: 2016, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 651.8, y: 23.3, año: 2016, dept: "Alcoi", prov: "Alicante"},
-                {x: 697.4, y: 22.7, año: 2016, dept: "Elda", prov: "Alicante"},
-                {x: 696.5, y: 22.5, año: 2016, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 645.1, y: 23.4, año: 2016, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 681.5, y: 23.1, año: 2016, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 741.9, y: 22.3, año: 2016, dept: "Orihuela", prov: "Alicante"},
-                {x: 668.9, y: 23.4, año: 2016, dept: "Sant Joan", prov: "Alicante"},
-                {x: 605.5, y: 24.6, año: 2016, dept: "Torrevieja", prov: "Alicante"},
-                {x: 674.4, y: 22.9, año: 2016, dept: "Castelló", prov: "Castellón"},
-                {x: 701.9, y: 22.5, año: 2016, dept: "La Plana", prov: "Castellón"},
-                {x: 630.6, y: 23.8, año: 2016, dept: "Vinarós", prov: "Castellón"},
-                {x: 643.4, y: 23.5, año: 2016, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 554.8, y: 25.2, año: 2016, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 734.0, y: 22.6, año: 2016, dept: "Dénia", prov: "Valencia"},
-                {x: 698.2, y: 22.9, año: 2016, dept: "Gandia", prov: "Valencia"},
-                {x: 789.6, y: 21.7, año: 2016, dept: "Manises", prov: "Valencia"},
-                {x: 684.3, y: 23.3, año: 2016, dept: "Requena", prov: "Valencia"},
-                {x: 774.6, y: 21.8, año: 2016, dept: "Ribera", prov: "Valencia"},
-                {x: 700.4, y: 22.7, año: 2016, dept: "Sagunt", prov: "Valencia"},
-                {x: 707.3, y: 22.6, año: 2016, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 676.0, y: 23.3, año: 2016, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 733.3, y: 22.2, año: 2016, dept: "Vilanova", prov: "Valencia"},
-                {x: 744.2, y: 22.0, año: 2016, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 650.0, y: 23.3, año: 2017, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 722.7, y: 22.5, año: 2017, dept: "Alcoi", prov: "Alicante"},
-                {x: 674.8, y: 22.9, año: 2017, dept: "Elda", prov: "Alicante"},
-                {x: 659.4, y: 23.2, año: 2017, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 696.1, y: 22.8, año: 2017, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 731.3, y: 22.2, año: 2017, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 696.2, y: 22.5, año: 2017, dept: "Orihuela", prov: "Alicante"},
-                {x: 731.6, y: 22.4, año: 2017, dept: "Sant Joan", prov: "Alicante"},
-                {x: 723.3, y: 22.6, año: 2017, dept: "Torrevieja", prov: "Alicante"},
-                {x: 704.8, y: 22.7, año: 2017, dept: "Castelló", prov: "Castellón"},
-                {x: 684.2, y: 22.8, año: 2017, dept: "La Plana", prov: "Castellón"},
-                {x: 662.7, y: 23.3, año: 2017, dept: "Vinarós", prov: "Castellón"},
-                {x: 655.6, y: 23.3, año: 2017, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 601.3, y: 24.5, año: 2017, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 717.0, y: 22.8, año: 2017, dept: "Dénia", prov: "Valencia"},
-                {x: 723.1, y: 22.4, año: 2017, dept: "Gandia", prov: "Valencia"},
-                {x: 801.6, y: 21.6, año: 2017, dept: "Manises", prov: "Valencia"},
-                {x: 694.8, y: 22.8, año: 2017, dept: "Requena", prov: "Valencia"},
-                {x: 751.1, y: 22.3, año: 2017, dept: "Ribera", prov: "Valencia"},
-                {x: 749.5, y: 21.9, año: 2017, dept: "Sagunt", prov: "Valencia"},
-                {x: 719.1, y: 22.8, año: 2017, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 674.5, y: 23.1, año: 2017, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 812.5, y: 21.5, año: 2017, dept: "Vilanova", prov: "Valencia"},
-                {x: 796.4, y: 21.4, año: 2017, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 630.9, y: 23.9, año: 2018, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 668.3, y: 22.9, año: 2018, dept: "Alcoi", prov: "Alicante"},
-                {x: 709.1, y: 22.5, año: 2018, dept: "Elda", prov: "Alicante"},
-                {x: 669.0, y: 23.1, año: 2018, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 781.7, y: 21.4, año: 2018, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 718.8, y: 22.5, año: 2018, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 791.6, y: 21.7, año: 2018, dept: "Orihuela", prov: "Alicante"},
-                {x: 715.2, y: 22.6, año: 2018, dept: "Sant Joan", prov: "Alicante"},
-                {x: 671.0, y: 23.3, año: 2018, dept: "Torrevieja", prov: "Alicante"},
-                {x: 670.4, y: 23.2, año: 2018, dept: "Castelló", prov: "Castellón"},
-                {x: 775.2, y: 21.7, año: 2018, dept: "La Plana", prov: "Castellón"},
-                {x: 741.2, y: 22.1, año: 2018, dept: "Vinarós", prov: "Castellón"},
-                {x: 667.2, y: 23.1, año: 2018, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 574.5, y: 24.7, año: 2018, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 744.1, y: 22.0, año: 2018, dept: "Dénia", prov: "Valencia"},
-                {x: 729.8, y: 22.5, año: 2018, dept: "Gandia", prov: "Valencia"},
-                {x: 732.9, y: 22.1, año: 2018, dept: "Manises", prov: "Valencia"},
-                {x: 707.4, y: 22.3, año: 2018, dept: "Requena", prov: "Valencia"},
-                {x: 768.9, y: 21.8, año: 2018, dept: "Ribera", prov: "Valencia"},
-                {x: 780.6, y: 21.9, año: 2018, dept: "Sagunt", prov: "Valencia"},
-                {x: 727.2, y: 22.3, año: 2018, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 642.9, y: 23.4, año: 2018, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 786.4, y: 21.6, año: 2018, dept: "Vilanova", prov: "Valencia"},
-                {x: 745.0, y: 22.0, año: 2018, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 556.7, y: 25.5, año: 2019, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 579.5, y: 24.2, año: 2019, dept: "Alcoi", prov: "Alicante"},
-                {x: 640.8, y: 23.6, año: 2019, dept: "Elda", prov: "Alicante"},
-                {x: 626.9, y: 23.8, año: 2019, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 704.4, y: 22.4, año: 2019, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 559.5, y: 25.4, año: 2019, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 719.9, y: 22.3, año: 2019, dept: "Orihuela", prov: "Alicante"},
-                {x: 644.2, y: 23.4, año: 2019, dept: "Sant Joan", prov: "Alicante"},
-                {x: 621.0, y: 24.3, año: 2019, dept: "Torrevieja", prov: "Alicante"},
-                {x: 625.0, y: 24.0, año: 2019, dept: "Castelló", prov: "Castellón"},
-                {x: 671.4, y: 23.0, año: 2019, dept: "La Plana", prov: "Castellón"},
-                {x: 617.6, y: 24.1, año: 2019, dept: "Vinarós", prov: "Castellón"},
-                {x: 563.8, y: 25.0, año: 2019, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 550.0, y: 25.4, año: 2019, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 682.4, y: 23.2, año: 2019, dept: "Dénia", prov: "Valencia"},
-                {x: 656.1, y: 23.4, año: 2019, dept: "Gandia", prov: "Valencia"},
-                {x: 676.9, y: 22.9, año: 2019, dept: "Manises", prov: "Valencia"},
-                {x: 638.1, y: 23.7, año: 2019, dept: "Requena", prov: "Valencia"},
-                {x: 710.5, y: 22.5, año: 2019, dept: "Ribera", prov: "Valencia"},
-                {x: 678.0, y: 23.2, año: 2019, dept: "Sagunt", prov: "Valencia"},
-                {x: 635.4, y: 23.7, año: 2019, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 628.1, y: 23.9, año: 2019, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 749.6, y: 21.9, año: 2019, dept: "Vilanova", prov: "Valencia"},
-                {x: 713.2, y: 22.4, año: 2019, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 629.8, y: 23.8, año: 2020, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 725.8, y: 22.2, año: 2020, dept: "Alcoi", prov: "Alicante"},
-                {x: 702.9, y: 22.8, año: 2020, dept: "Elda", prov: "Alicante"},
-                {x: 601.9, y: 24.2, año: 2020, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 761.8, y: 21.8, año: 2020, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 650.6, y: 23.9, año: 2020, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 650.2, y: 23.4, año: 2020, dept: "Orihuela", prov: "Alicante"},
-                {x: 711.8, y: 22.6, año: 2020, dept: "Sant Joan", prov: "Alicante"},
-                {x: 699.5, y: 23.4, año: 2020, dept: "Torrevieja", prov: "Alicante"},
-                {x: 664.6, y: 23.1, año: 2020, dept: "Castelló", prov: "Castellón"},
-                {x: 726.5, y: 22.4, año: 2020, dept: "La Plana", prov: "Castellón"},
-                {x: 663.5, y: 23.5, año: 2020, dept: "Vinarós", prov: "Castellón"},
-                {x: 646.0, y: 23.6, año: 2020, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 623.8, y: 24.1, año: 2020, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 685.3, y: 23.3, año: 2020, dept: "Dénia", prov: "Valencia"},
-                {x: 730.0, y: 21.9, año: 2020, dept: "Gandia", prov: "Valencia"},
-                {x: 770.9, y: 21.8, año: 2020, dept: "Manises", prov: "Valencia"},
-                {x: 823.6, y: 21.0, año: 2020, dept: "Requena", prov: "Valencia"},
-                {x: 766.0, y: 21.9, año: 2020, dept: "Ribera", prov: "Valencia"},
-                {x: 775.0, y: 22.2, año: 2020, dept: "Sagunt", prov: "Valencia"},
-                {x: 722.2, y: 22.4, año: 2020, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 651.9, y: 23.3, año: 2020, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 778.5, y: 21.7, año: 2020, dept: "Vilanova", prov: "Valencia"},
-                {x: 738.4, y: 22.2, año: 2020, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 611.2, y: 24.1, año: 2021, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 745.0, y: 22.0, año: 2021, dept: "Alcoi", prov: "Alicante"},
-                {x: 706.2, y: 22.5, año: 2021, dept: "Elda", prov: "Alicante"},
-                {x: 677.7, y: 22.8, año: 2021, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 751.3, y: 22.0, año: 2021, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 688.6, y: 23.3, año: 2021, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 722.4, y: 22.2, año: 2021, dept: "Orihuela", prov: "Alicante"},
-                {x: 717.2, y: 22.4, año: 2021, dept: "Sant Joan", prov: "Alicante"},
-                {x: 724.5, y: 22.7, año: 2021, dept: "Torrevieja", prov: "Alicante"},
-                {x: 668.5, y: 23.2, año: 2021, dept: "Castelló", prov: "Castellón"},
-                {x: 728.0, y: 22.4, año: 2021, dept: "La Plana", prov: "Castellón"},
-                {x: 672.3, y: 23.1, año: 2021, dept: "Vinarós", prov: "Castellón"},
-                {x: 646.9, y: 23.6, año: 2021, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 595.5, y: 24.3, año: 2021, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 697.4, y: 23.1, año: 2021, dept: "Dénia", prov: "Valencia"},
-                {x: 764.4, y: 22.0, año: 2021, dept: "Gandia", prov: "Valencia"},
-                {x: 735.9, y: 22.0, año: 2021, dept: "Manises", prov: "Valencia"},
-                {x: 681.7, y: 23.2, año: 2021, dept: "Requena", prov: "Valencia"},
-                {x: 777.9, y: 21.8, año: 2021, dept: "Ribera", prov: "Valencia"},
-                {x: 750.4, y: 22.1, año: 2021, dept: "Sagunt", prov: "Valencia"},
-                {x: 687.6, y: 22.8, año: 2021, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 661.0, y: 23.3, año: 2021, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 728.0, y: 22.2, año: 2021, dept: "Vilanova", prov: "Valencia"},
-                {x: 707.1, y: 22.4, año: 2021, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 588.0, y: 24.2, año: 2022, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 655.0, y: 22.9, año: 2022, dept: "Alcoi", prov: "Alicante"},
-                {x: 686.4, y: 22.9, año: 2022, dept: "Elda", prov: "Alicante"},
-                {x: 622.3, y: 23.8, año: 2022, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 787.8, y: 21.7, año: 2022, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 626.1, y: 24.0, año: 2022, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 704.4, y: 22.8, año: 2022, dept: "Orihuela", prov: "Alicante"},
-                {x: 649.0, y: 23.4, año: 2022, dept: "Sant Joan", prov: "Alicante"},
-                {x: 671.7, y: 23.5, año: 2022, dept: "Torrevieja", prov: "Alicante"},
-                {x: 641.6, y: 23.5, año: 2022, dept: "Castelló", prov: "Castellón"},
-                {x: 716.3, y: 22.5, año: 2022, dept: "La Plana", prov: "Castellón"},
-                {x: 586.1, y: 24.5, año: 2022, dept: "Vinarós", prov: "Castellón"},
-                {x: 674.5, y: 23.2, año: 2022, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 570.8, y: 24.9, año: 2022, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 658.9, y: 23.2, año: 2022, dept: "Dénia", prov: "Valencia"},
-                {x: 779.9, y: 21.7, año: 2022, dept: "Gandia", prov: "Valencia"},
-                {x: 789.1, y: 21.5, año: 2022, dept: "Manises", prov: "Valencia"},
-                {x: 803.0, y: 21.6, año: 2022, dept: "Requena", prov: "Valencia"},
-                {x: 799.7, y: 21.5, año: 2022, dept: "Ribera", prov: "Valencia"},
-                {x: 753.2, y: 22.0, año: 2022, dept: "Sagunt", prov: "Valencia"},
-                {x: 745.5, y: 22.0, año: 2022, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 672.0, y: 23.1, año: 2022, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 754.7, y: 22.1, año: 2022, dept: "Vilanova", prov: "Valencia"},
-                {x: 753.3, y: 22.0, año: 2022, dept: "Xàtiva-Ontinyent", prov: "Valencia"},
-                {x: 601.1, y: 24.3, año: 2023, dept: "Alacant Hospital General", prov: "Alicante"},
-                {x: 606.4, y: 24.1, año: 2023, dept: "Alcoi", prov: "Alicante"},
-                {x: 635.0, y: 23.5, año: 2023, dept: "Elda", prov: "Alicante"},
-                {x: 587.3, y: 24.2, año: 2023, dept: "Elx Hospital General", prov: "Alicante"},
-                {x: 644.0, y: 23.4, año: 2023, dept: "Elx-Crevillent", prov: "Alicante"},
-                {x: 610.2, y: 24.3, año: 2023, dept: "Marina Baixa", prov: "Alicante"},
-                {x: 665.6, y: 23.0, año: 2023, dept: "Orihuela", prov: "Alicante"},
-                {x: 622.6, y: 23.9, año: 2023, dept: "Sant Joan", prov: "Alicante"},
-                {x: 652.7, y: 23.8, año: 2023, dept: "Torrevieja", prov: "Alicante"},
-                {x: 613.2, y: 23.9, año: 2023, dept: "Castelló", prov: "Castellón"},
-                {x: 642.4, y: 23.6, año: 2023, dept: "La Plana", prov: "Castellón"},
-                {x: 656.4, y: 23.7, año: 2023, dept: "Vinarós", prov: "Castellón"},
-                {x: 578.2, y: 24.5, año: 2023, dept: "Clínic Malvarrosa", prov: "Valencia"},
-                {x: 555.2, y: 25.0, año: 2023, dept: "Doctor Peset", prov: "Valencia"},
-                {x: 611.9, y: 24.1, año: 2023, dept: "Dénia", prov: "Valencia"},
-                {x: 670.3, y: 22.9, año: 2023, dept: "Gandia", prov: "Valencia"},
-                {x: 721.8, y: 22.4, año: 2023, dept: "Manises", prov: "Valencia"},
-                {x: 717.8, y: 22.7, año: 2023, dept: "Requena", prov: "Valencia"},
-                {x: 761.0, y: 22.1, año: 2023, dept: "Ribera", prov: "Valencia"},
-                {x: 690.9, y: 22.7, año: 2023, dept: "Sagunt", prov: "Valencia"},
-                {x: 671.1, y: 23.2, año: 2023, dept: "Valencia Hospital General", prov: "Valencia"},
-                {x: 588.5, y: 24.4, año: 2023, dept: "Valencia La Fe", prov: "Valencia"},
-                {x: 683.3, y: 22.9, año: 2023, dept: "Vilanova", prov: "Valencia"},
-                {x: 704.1, y: 22.6, año: 2023, dept: "Xàtiva-Ontinyent", prov: "Valencia"}
-            ]
+            hombres: [{x: 1100, y: 18.5, año: 2010, dept: "Promedio", prov: "CV"}, {x: 1050, y: 19.0, año: 2015, dept: "Promedio", prov: "CV"}, {x: 1060, y: 18.8, año: 2020, dept: "Promedio", prov: "CV"}, {x: 955, y: 19.6, año: 2023, dept: "Promedio", prov: "CV"}],
+            mujeres: [{x: 730, y: 22.8, año: 2010, dept: "Promedio", prov: "CV"}, {x: 720, y: 23.1, año: 2015, dept: "Promedio", prov: "CV"}, {x: 770, y: 22.7, año: 2020, dept: "Promedio", prov: "CV"}, {x: 703, y: 23.4, año: 2023, dept: "Promedio", prov: "CV"}]
         };
-
-        // =============================================
-        // CONFIGURACIÓN CHART.JS
-        // =============================================
+        
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.color = '#64748b';
-        Chart.defaults.plugins.legend.labels.usePointStyle = true;
-        
-        // =============================================
-        // VARIABLES GLOBALES
-        // =============================================
         let charts = {};
-        let animations = { resumen: null, suicidio: null };
-        let currentYear = { resumen: 2023, suicidio: 2023 };
-
-        // =============================================
-        // FUNCIONES DE NAVEGACIÓN
-        // =============================================
+        let animations = { suicidio: null };
+        
         function showSection(id) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             event.target.classList.add('active');
-            
-            // Inicializar gráficos de la sección si es necesario
-            setTimeout(() => initSectionCharts(id), 100);
         }
-
-        // =============================================
-        // FUNCIONES DE ANIMACIÓN
-        // =============================================
+        
         function toggleAnimation(type) {
-            const btn = document.getElementById(`playBtn${type.charAt(0).toUpperCase() + type.slice(1)}`);
-            const slider = document.getElementById(`slider${type.charAt(0).toUpperCase() + type.slice(1)}`);
-            
+            const btn = document.getElementById('playBtnSuicidio');
+            const slider = document.getElementById('sliderSuicidio');
             if (animations[type]) {
-                clearInterval(animations[type]);
-                animations[type] = null;
-                btn.innerHTML = '▶';
-                btn.classList.remove('playing');
+                clearInterval(animations[type]); animations[type] = null;
+                btn.innerHTML = '▶'; btn.classList.remove('playing');
             } else {
-                currentYear[type] = 2010;
-                slider.value = 2010;
-                btn.innerHTML = '⏸';
-                btn.classList.add('playing');
-                
+                let year = 2010; slider.value = 2010;
+                btn.innerHTML = '⏸'; btn.classList.add('playing');
                 animations[type] = setInterval(() => {
-                    currentYear[type]++;
-                    if (currentYear[type] > 2023) {
-                        currentYear[type] = 2010;
-                    }
-                    slider.value = currentYear[type];
-                    
-                    if (type === 'resumen') updateYearResumen(currentYear[type]);
-                    if (type === 'suicidio') updateYearSuicidio(currentYear[type]);
+                    year++; if (year > 2023) year = 2010;
+                    slider.value = year;
+                    document.getElementById('yearDisplaySuicidio').textContent = year;
                 }, 800);
             }
         }
-
-        function updateYearResumen(year) {
-            document.getElementById('yearDisplayResumen').textContent = year;
-            const idx = años.indexOf(parseInt(year));
-            if (charts.resumen && idx >= 0) {
-                // Actualizar highlight del año actual
-                charts.resumen.options.plugins.annotation = {
-                    annotations: {
-                        currentYear: {
-                            type: 'line',
-                            xMin: year,
-                            xMax: year,
-                            borderColor: 'rgba(245, 158, 11, 0.8)',
-                            borderWidth: 3,
-                            label: { display: true, content: year, position: 'start' }
-                        }
-                    }
-                };
-                charts.resumen.update();
-            }
-        }
-
-        function updateYearSuicidio(year) {
-            document.getElementById('yearDisplaySuicidio').textContent = year;
-        }
-
-        // =============================================
-        // EXPORTAR DATOS
-        // =============================================
+        function updateYearSuicidio(year) { document.getElementById('yearDisplaySuicidio').textContent = year; }
+        
         function exportData(type) {
-            let csv = '';
-            let filename = '';
-            
+            let csv = '', filename = '';
             if (type === 'temporal') {
                 csv = 'Año,Ambos Sexos,Hombres,Mujeres\n';
-                años.forEach((año, i) => {
-                    csv += `${año},${datosTemporales.ambos[i]},${datosTemporales.hombres[i]},${datosTemporales.mujeres[i]}\n`;
-                });
+                años.forEach((año, i) => { csv += `${año},${datosTemporales.ambos[i]},${datosTemporales.hombres[i]},${datosTemporales.mujeres[i]}\n`; });
                 filename = 'mortalidad_temporal_cv.csv';
             } else if (type === 'departamentos') {
                 csv = 'Departamento,Provincia,Tasa Mortalidad\n';
-                departamentos.nombres.forEach((nombre, i) => {
-                    csv += `"${nombre}",${departamentos.provincias[i]},${departamentos.tasas[i]}\n`;
-                });
+                departamentos.nombres.forEach((n, i) => { csv += `"${n}",${departamentos.provincias[i]},${departamentos.tasas[i]}\n`; });
                 filename = 'mortalidad_departamentos_cv.csv';
             } else if (type === 'heatmap') {
                 csv = 'Departamento,' + años.join(',') + '\n';
-                Object.keys(heatmapData).forEach(dept => {
-                    csv += `"${dept}",${heatmapData[dept].join(',')}\n`;
-                });
+                Object.keys(heatmapData).forEach(d => { csv += `"${d}",${heatmapData[d].join(',')}\n`; });
                 filename = 'heatmap_mortalidad_cv.csv';
             }
-            
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            link.click();
+            const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = filename; link.click();
         }
-
-        // =============================================
-        // INICIALIZACIÓN DE GRÁFICOS
-        // =============================================
-        function initSectionCharts(section) {
-            if (section === 'heatmap' && !document.getElementById('heatmapTable').innerHTML) {
-                generateHeatmap();
-            }
-        }
-
-        // =============================================
-        // GRÁFICO RESUMEN
-        // =============================================
+        
         function createChartResumen() {
-            const ctx = document.getElementById('chartResumen');
-            charts.resumen = new Chart(ctx, {
+            charts.resumen = new Chart(document.getElementById('chartResumen'), {
                 type: 'line',
                 data: {
                     labels: años,
                     datasets: [
-                        {
-                            label: 'Hombres',
-                            data: datosTemporales.hombres,
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            fill: false,
-                            tension: 0.3,
-                            pointRadius: 5,
-                            pointHoverRadius: 8
-                        },
-                        {
-                            label: 'Mujeres',
-                            data: datosTemporales.mujeres,
-                            borderColor: '#ec4899',
-                            backgroundColor: 'rgba(236, 72, 153, 0.1)',
-                            fill: false,
-                            tension: 0.3,
-                            pointRadius: 5,
-                            pointHoverRadius: 8
-                        },
-                        {
-                            label: 'Ambos sexos',
-                            data: datosTemporales.ambos,
-                            borderColor: '#8b5cf6',
-                            backgroundColor: 'rgba(139, 92, 246, 0.15)',
-                            fill: true,
-                            tension: 0.3,
-                            pointRadius: 5,
-                            pointHoverRadius: 8,
-                            borderWidth: 3
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: { intersect: false, mode: 'index' },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(30, 58, 95, 0.95)',
-                            padding: 12,
-                            titleFont: { size: 14, weight: 'bold' },
-                            bodyFont: { size: 13 },
-                            callbacks: {
-                                label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)} por 100.000`
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            title: { display: true, text: 'Tasa por 100.000 hab.', font: { weight: 'bold' } },
-                            min: 650,
-                            max: 1100,
-                            grid: { color: 'rgba(0,0,0,0.05)' }
-                        },
-                        x: {
-                            title: { display: true, text: 'Año', font: { weight: 'bold' } },
-                            grid: { display: false }
-                        }
-                    }
-                },
-                plugins: [{
-                    id: 'covidBackground',
-                    beforeDraw: (chart) => {
-                        const ctx = chart.ctx;
-                        const xAxis = chart.scales.x;
-                        const yAxis = chart.scales.y;
-                        const x1 = xAxis.getPixelForValue(2019.5);
-                        const x2 = xAxis.getPixelForValue(2021.5);
-                        ctx.save();
-                        ctx.fillStyle = 'rgba(254, 202, 202, 0.3)';
-                        ctx.fillRect(x1, yAxis.top, x2 - x1, yAxis.bottom - yAxis.top);
-                        ctx.restore();
-                    }
-                }]
-            });
-        }
-
-        // =============================================
-        // GRÁFICO TEMPORAL (con filtros)
-        // =============================================
-        function createChartTemporal() {
-            const ctx = document.getElementById('chartTemporal');
-            charts.temporal = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: años,
-                    datasets: [
-                        { label: 'Hombres', data: datosTemporales.hombres, borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)', tension: 0.3, pointRadius: 5 },
-                        { label: 'Mujeres', data: datosTemporales.mujeres, borderColor: '#ec4899', backgroundColor: 'rgba(236, 72, 153, 0.1)', tension: 0.3, pointRadius: 5 },
+                        { label: 'Hombres', data: datosTemporales.hombres, borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)', fill: false, tension: 0.3, pointRadius: 5 },
+                        { label: 'Mujeres', data: datosTemporales.mujeres, borderColor: '#ec4899', backgroundColor: 'rgba(236, 72, 153, 0.1)', fill: false, tension: 0.3, pointRadius: 5 },
                         { label: 'Ambos sexos', data: datosTemporales.ambos, borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.15)', fill: true, tension: 0.3, pointRadius: 5, borderWidth: 3 }
                     ]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: { intersect: false, mode: 'index' },
-                    plugins: {
-                        legend: { position: 'top' },
-                        tooltip: {
-                            backgroundColor: 'rgba(30, 58, 95, 0.95)',
-                            callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}` }
-                        }
-                    },
-                    scales: {
-                        y: { title: { display: true, text: 'Tasa por 100.000 hab.' }, min: 650, max: 1100 },
-                        x: { title: { display: true, text: 'Año' } }
-                    }
-                }
+                options: { responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: 'index' }, plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(30, 58, 95, 0.95)', callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}` } } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000 hab.' }, min: 650, max: 1100 }, x: { title: { display: true, text: 'Año' } } } }
             });
         }
-
+        
+        function createChartTemporal() {
+            charts.temporal = new Chart(document.getElementById('chartTemporal'), {
+                type: 'line', data: { labels: años, datasets: [
+                    { label: 'Hombres', data: datosTemporales.hombres, borderColor: '#3b82f6', tension: 0.3, pointRadius: 5 },
+                    { label: 'Mujeres', data: datosTemporales.mujeres, borderColor: '#ec4899', tension: 0.3, pointRadius: 5 },
+                    { label: 'Ambos sexos', data: datosTemporales.ambos, borderColor: '#8b5cf6', fill: true, tension: 0.3, pointRadius: 5, borderWidth: 3 }
+                ]}, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' }, min: 650, max: 1100 } } }
+            });
+        }
         function updateTemporalChart() {
             const sexo = document.getElementById('selectSexoTemporal').value;
             const rango = document.getElementById('selectRangoTemporal').value;
-            
-            // Filtrar por sexo
             charts.temporal.data.datasets.forEach((ds, i) => {
                 if (sexo === 'todos') ds.hidden = false;
                 else if (sexo === 'hombres') ds.hidden = i !== 0;
                 else if (sexo === 'mujeres') ds.hidden = i !== 1;
                 else if (sexo === 'ambos') ds.hidden = i !== 2;
             });
-            
-            // Filtrar por rango
-            let filteredAños = años;
             let startIdx = 0, endIdx = años.length;
-            
-            if (rango === 'pre') { endIdx = 10; }
-            else if (rango === 'post') { startIdx = 10; }
-            
+            if (rango === 'pre') endIdx = 10;
+            else if (rango === 'post') startIdx = 10;
             charts.temporal.data.labels = años.slice(startIdx, endIdx);
             charts.temporal.data.datasets[0].data = datosTemporales.hombres.slice(startIdx, endIdx);
             charts.temporal.data.datasets[1].data = datosTemporales.mujeres.slice(startIdx, endIdx);
             charts.temporal.data.datasets[2].data = datosTemporales.ambos.slice(startIdx, endIdx);
-            
             charts.temporal.update();
         }
-
-        // =============================================
-        // GRÁFICOS DE CAUSAS
-        // =============================================
+        
         function createChartCausas() {
-            const ctx = document.getElementById('chartCausas');
-            charts.causas = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: causas.nombres,
-                    datasets: [{
-                        label: 'Tasa promedio',
-                        data: causas.tasas,
-                        backgroundColor: causas.colores,
-                        borderRadius: 8,
-                        borderSkipped: false
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            backgroundColor: 'rgba(30, 58, 95, 0.95)',
-                            callbacks: { label: ctx => `${ctx.parsed.x.toFixed(1)} por 100.000 hab.` }
-                        }
-                    },
-                    scales: {
-                        x: { title: { display: true, text: 'Tasa por 100.000 hab.' }, grid: { color: 'rgba(0,0,0,0.05)' } },
-                        y: { grid: { display: false } }
-                    }
-                }
-            });
+            charts.causas = new Chart(document.getElementById('chartCausas'), { type: 'bar', data: { labels: causas.nombres, datasets: [{ data: causas.tasas, backgroundColor: causas.colores, borderRadius: 8 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Tasa por 100.000' } } } } });
         }
-
         function createChartTendenciaCausas() {
-            const ctx = document.getElementById('chartTendenciaCausas');
-            charts.tendenciaCausas = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: causas.nombres,
-                    datasets: [{
-                        label: 'Cambio %',
-                        data: causas.cambios,
-                        backgroundColor: causas.cambios.map(v => v > 0 ? '#dc2626' : '#16a34a'),
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: { label: ctx => `${ctx.parsed.y > 0 ? '+' : ''}${ctx.parsed.y.toFixed(1)}%` }
-                        }
-                    },
-                    scales: {
-                        y: { title: { display: true, text: 'Cambio % (2010-2023)' } },
-                        x: { grid: { display: false } }
-                    }
-                }
-            });
+            charts.tendenciaCausas = new Chart(document.getElementById('chartTendenciaCausas'), { type: 'bar', data: { labels: causas.nombres, datasets: [{ data: causas.cambios, backgroundColor: causas.cambios.map(v => v > 0 ? '#dc2626' : '#16a34a'), borderRadius: 8 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y > 0 ? '+' : ''}${ctx.parsed.y.toFixed(1)}%` } } }, scales: { y: { title: { display: true, text: 'Cambio %' } } } } });
         }
-
         function createChartSuicidio() {
-            const ctx = document.getElementById('chartSuicidio');
-            charts.suicidio = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: años,
-                    datasets: [
-                        { label: 'Hombres', data: suicidioData.hombres, borderColor: '#3b82f6', tension: 0.3, pointRadius: 4 },
-                        { label: 'Mujeres', data: suicidioData.mujeres, borderColor: '#ec4899', tension: 0.3, pointRadius: 4 },
-                        { label: 'Ambos', data: suicidioData.ambos, borderColor: '#8b5cf6', borderWidth: 3, tension: 0.3, pointRadius: 4 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'top' } },
-                    scales: {
-                        y: { title: { display: true, text: 'Tasa por 100.000' }, min: 0, max: 15 },
-                        x: { title: { display: true, text: 'Año' } }
-                    }
-                }
-            });
+            charts.suicidio = new Chart(document.getElementById('chartSuicidio'), { type: 'line', data: { labels: años, datasets: [{ label: 'Hombres', data: suicidioData.hombres, borderColor: '#3b82f6', tension: 0.3 }, { label: 'Mujeres', data: suicidioData.mujeres, borderColor: '#ec4899', tension: 0.3 }, { label: 'Ambos', data: suicidioData.ambos, borderColor: '#8b5cf6', borderWidth: 3, tension: 0.3 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' }, min: 0, max: 15 } } } });
         }
-
-        // =============================================
-        // GRÁFICOS DE GÉNERO
-        // =============================================
         function createChartRatioGenero() {
-            const ctx = document.getElementById('chartRatioGenero');
-            charts.ratioGenero = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ratioGenero.causas,
-                    datasets: [{
-                        label: 'Ratio H/M',
-                        data: ratioGenero.ratios,
-                        backgroundColor: ratioGenero.colores,
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: ctx => `${ctx.parsed.x.toFixed(2)}x más en hombres` } }
-                    },
-                    scales: {
-                        x: { title: { display: true, text: 'Ratio Hombres / Mujeres' }, min: 0, max: 3.5 }
-                    }
-                }
-            });
+            charts.ratioGenero = new Chart(document.getElementById('chartRatioGenero'), { type: 'bar', data: { labels: ratioGenero.causas, datasets: [{ data: ratioGenero.ratios, backgroundColor: ratioGenero.colores, borderRadius: 8 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.x.toFixed(2)}x más en hombres` } } }, scales: { x: { title: { display: true, text: 'Ratio H/M' }, min: 0, max: 3.5 } } } });
         }
-
         function createChartGeneroBarras() {
-            const ctx = document.getElementById('chartGeneroBarras');
-            charts.generoBarras = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Cáncer', 'Cardiopatía', 'Cerebrovascular', 'Suicidio'],
-                    datasets: [
-                        { label: 'Hombres', data: [307.5, 95.8, 51.2, 12.1], backgroundColor: '#3b82f6', borderRadius: 6 },
-                        { label: 'Mujeres', data: [161.2, 45.6, 42.1, 3.9], backgroundColor: '#ec4899', borderRadius: 6 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'top' } },
-                    scales: {
-                        y: { title: { display: true, text: 'Tasa por 100.000' } }
-                    }
-                }
-            });
+            charts.generoBarras = new Chart(document.getElementById('chartGeneroBarras'), { type: 'bar', data: { labels: ['Cáncer', 'Cardiopatía', 'Cerebrovascular', 'Suicidio'], datasets: [{ label: 'Hombres', data: [307.5, 95.8, 51.2, 12.1], backgroundColor: '#3b82f6', borderRadius: 6 }, { label: 'Mujeres', data: [161.2, 45.6, 42.1, 3.9], backgroundColor: '#ec4899', borderRadius: 6 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' } } } } });
         }
-
         function updateGeneroChart() {
             const causa = document.getElementById('selectCausaGenero').value;
-            let dataH, dataM, labels;
-            
-            if (causa === 'todas') {
-                labels = ['Cáncer', 'Cardiopatía', 'Cerebrovascular', 'Suicidio'];
-                dataH = [307.5, 95.8, 51.2, 12.1];
-                dataM = [161.2, 45.6, 42.1, 3.9];
-            } else {
-                const d = tasasPorSexoCausa[causa];
-                labels = [causa.charAt(0).toUpperCase() + causa.slice(1)];
-                dataH = [d.h];
-                dataM = [d.m];
-            }
-            
+            let labels, dataH, dataM;
+            if (causa === 'todas') { labels = ['Cáncer', 'Cardiopatía', 'Cerebrovascular', 'Suicidio']; dataH = [307.5, 95.8, 51.2, 12.1]; dataM = [161.2, 45.6, 42.1, 3.9]; }
+            else { const d = tasasPorSexoCausa[causa]; labels = [causa]; dataH = [d.h]; dataM = [d.m]; }
             charts.generoBarras.data.labels = labels;
             charts.generoBarras.data.datasets[0].data = dataH;
             charts.generoBarras.data.datasets[1].data = dataM;
             charts.generoBarras.update();
         }
-
         function createChartEVGenero() {
-            const ctx = document.getElementById('chartEVGenero');
-            charts.evGenero = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: años,
-                    datasets: [
-                        { label: 'Mujeres', data: evPorSexo.mujeres, borderColor: '#ec4899', backgroundColor: 'rgba(236, 72, 153, 0.1)', fill: true, tension: 0.3 },
-                        { label: 'Hombres', data: evPorSexo.hombres, borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)', fill: true, tension: 0.3 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'top' } },
-                    scales: {
-                        y: { title: { display: true, text: 'Años de esperanza de vida' }, min: 17, max: 25 }
-                    }
-                }
-            });
+            charts.evGenero = new Chart(document.getElementById('chartEVGenero'), { type: 'line', data: { labels: años, datasets: [{ label: 'Mujeres', data: evPorSexo.mujeres, borderColor: '#ec4899', fill: true, tension: 0.3 }, { label: 'Hombres', data: evPorSexo.hombres, borderColor: '#3b82f6', fill: true, tension: 0.3 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Años' }, min: 17, max: 25 } } } });
         }
-
-        // =============================================
-        // GRÁFICOS TERRITORIALES
-        // =============================================
         function createChartDepartamentos() {
-            const ctx = document.getElementById('chartDepartamentos');
-            const colores = departamentos.provincias.map(p => {
-                if (p === 'Alicante') return '#16a34a';
-                if (p === 'Valencia') return '#3b82f6';
-                return '#eab308';
-            });
-            
-            charts.departamentos = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: departamentos.nombres,
-                    datasets: [{
-                        label: 'Tasa mortalidad',
-                        data: departamentos.tasas,
-                        backgroundColor: colores,
-                        borderRadius: 4
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                afterLabel: ctx => `Provincia: ${departamentos.provincias[ctx.dataIndex]}`
-                            }
-                        }
-                    },
-                    scales: {
-                        x: { title: { display: true, text: 'Tasa por 100.000 hab.' }, min: 750, max: 1000 }
-                    }
-                }
-            });
+            const colores = departamentos.provincias.map(p => p === 'Alicante' ? '#16a34a' : p === 'Valencia' ? '#3b82f6' : '#eab308');
+            charts.departamentos = new Chart(document.getElementById('chartDepartamentos'), { type: 'bar', data: { labels: departamentos.nombres, datasets: [{ data: departamentos.tasas, backgroundColor: colores, borderRadius: 4 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { afterLabel: ctx => `Provincia: ${departamentos.provincias[ctx.dataIndex]}` } } }, scales: { x: { title: { display: true, text: 'Tasa por 100.000' }, min: 750, max: 1000 } } } });
         }
-
         function updateDepartamentosChart() {
             const provincia = document.getElementById('selectProvincia').value;
             const orden = document.getElementById('selectOrden').value;
-            
             let indices = [...Array(departamentos.nombres.length).keys()];
-            
-            if (provincia !== 'todas') {
-                indices = indices.filter(i => departamentos.provincias[i] === provincia);
-            }
-            
-            if (orden === 'desc') {
-                indices.sort((a, b) => departamentos.tasas[b] - departamentos.tasas[a]);
-            } else {
-                indices.sort((a, b) => departamentos.tasas[a] - departamentos.tasas[b]);
-            }
-            
-            const filteredNombres = indices.map(i => departamentos.nombres[i]);
-            const filteredTasas = indices.map(i => departamentos.tasas[i]);
-            const filteredColores = indices.map(i => {
-                const p = departamentos.provincias[i];
-                if (p === 'Alicante') return '#16a34a';
-                if (p === 'Valencia') return '#3b82f6';
-                return '#eab308';
-            });
-            
-            charts.departamentos.data.labels = filteredNombres;
-            charts.departamentos.data.datasets[0].data = filteredTasas;
-            charts.departamentos.data.datasets[0].backgroundColor = filteredColores;
+            if (provincia !== 'todas') indices = indices.filter(i => departamentos.provincias[i] === provincia);
+            if (orden === 'desc') indices.sort((a, b) => departamentos.tasas[b] - departamentos.tasas[a]);
+            else indices.sort((a, b) => departamentos.tasas[a] - departamentos.tasas[b]);
+            charts.departamentos.data.labels = indices.map(i => departamentos.nombres[i]);
+            charts.departamentos.data.datasets[0].data = indices.map(i => departamentos.tasas[i]);
+            charts.departamentos.data.datasets[0].backgroundColor = indices.map(i => departamentos.provincias[i] === 'Alicante' ? '#16a34a' : departamentos.provincias[i] === 'Valencia' ? '#3b82f6' : '#eab308');
             charts.departamentos.update();
         }
-
         function createChartProvincias() {
-            const ctx = document.getElementById('chartProvincias');
-            charts.provincias = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: años,
-                    datasets: [
-                        { label: 'Alicante', data: provinciasData.alicante, borderColor: '#16a34a', tension: 0.3, pointRadius: 4 },
-                        { label: 'Valencia', data: provinciasData.valencia, borderColor: '#3b82f6', tension: 0.3, pointRadius: 4 },
-                        { label: 'Castellón', data: provinciasData.castellon, borderColor: '#eab308', tension: 0.3, pointRadius: 4 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'top' } },
-                    scales: {
-                        y: { title: { display: true, text: 'Tasa por 100.000' } }
-                    }
-                }
-            });
+            charts.provincias = new Chart(document.getElementById('chartProvincias'), { type: 'line', data: { labels: años, datasets: [{ label: 'Alicante', data: provinciasData.alicante, borderColor: '#16a34a', tension: 0.3 }, { label: 'Valencia', data: provinciasData.valencia, borderColor: '#3b82f6', tension: 0.3 }, { label: 'Castellón', data: provinciasData.castellon, borderColor: '#eab308', tension: 0.3 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' } } } } });
         }
-
-        // =============================================
-        // HEATMAP
-        // =============================================
         function generateHeatmap() {
             const table = document.getElementById('heatmapTable');
             let html = '<tr><th>Departamento</th>';
-            años.forEach(año => {
-                const isCovidYear = (año === 2020 || año === 2021);
-                html += `<th style="${isCovidYear ? 'background: #dc2626;' : ''}">${año}</th>`;
-            });
+            años.forEach(año => { html += `<th style="${(año === 2020 || año === 2021) ? 'background: #dc2626;' : ''}">${año}</th>`; });
             html += '</tr>';
-            
-            // Ordenar departamentos por promedio
             const deptOrder = Object.keys(heatmapData).sort((a, b) => {
                 const avgA = heatmapData[a].reduce((s, v) => s + v, 0) / heatmapData[a].length;
                 const avgB = heatmapData[b].reduce((s, v) => s + v, 0) / heatmapData[b].length;
                 return avgB - avgA;
             });
-            
             const allValues = Object.values(heatmapData).flat();
-            const minVal = Math.min(...allValues);
-            const maxVal = Math.max(...allValues);
-            
+            const minVal = Math.min(...allValues), maxVal = Math.max(...allValues);
             deptOrder.forEach(dept => {
                 html += `<tr><td class="row-label">${dept}</td>`;
                 heatmapData[dept].forEach(val => {
                     const ratio = (val - minVal) / (maxVal - minVal);
-                    const r = Math.round(220 * ratio + 35);
-                    const g = Math.round(180 * (1 - ratio) + 75);
-                    const b = Math.round(80 * (1 - ratio) + 50);
+                    const r = Math.round(220 * ratio + 35), g = Math.round(180 * (1 - ratio) + 75), b = Math.round(80 * (1 - ratio) + 50);
                     html += `<td style="background: rgb(${r},${g},${b}); color: ${ratio > 0.5 ? 'white' : 'black'};" title="${dept}: ${val}">${val}</td>`;
                 });
                 html += '</tr>';
             });
-            
             table.innerHTML = html;
         }
-
-        // =============================================
-        // GRÁFICOS COVID
-        // =============================================
-        function createChartCovidAbsoluto() {
-            const ctx = document.getElementById('chartCovidAbsoluto');
-            charts.covidAbsoluto = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: covidData.periodos,
-                    datasets: [{
-                        label: 'Tasa mortalidad',
-                        data: covidData.valores,
-                        backgroundColor: ['#16a34a', '#dc2626', '#dc2626', '#3b82f6'],
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        y: { title: { display: true, text: 'Tasa por 100.000' }, min: 800, max: 950 }
-                    }
-                }
-            });
+        function createChartCovidAbsoluto() { charts.covidAbsoluto = new Chart(document.getElementById('chartCovidAbsoluto'), { type: 'bar', data: { labels: covidData.periodos, datasets: [{ data: covidData.valores, backgroundColor: ['#16a34a', '#dc2626', '#dc2626', '#3b82f6'], borderRadius: 8 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' }, min: 800, max: 950 } } } }); }
+        function createChartCovidRelativo() { charts.covidRelativo = new Chart(document.getElementById('chartCovidRelativo'), { type: 'bar', data: { labels: covidData.periodos, datasets: [{ data: covidData.variaciones, backgroundColor: ['#64748b', '#dc2626', '#dc2626', '#3b82f6'], borderRadius: 8 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y > 0 ? '+' : ''}${ctx.parsed.y.toFixed(1)}%` } } }, scales: { y: { title: { display: true, text: 'Variación %' }, min: -2, max: 7 } } } }); }
+        function createChartCovidSexo() { charts.covidSexo = new Chart(document.getElementById('chartCovidSexo'), { type: 'line', data: { labels: ['2018', '2019', '2020', '2021', '2022', '2023'], datasets: [{ label: 'Hombres', data: [993.9, 1003.3, 1054.6, 1062.3, 1025.1, 955.5], borderColor: '#3b82f6', tension: 0.3 }, { label: 'Mujeres', data: [731.1, 741.7, 771.7, 774.7, 751.2, 703.4], borderColor: '#ec4899', tension: 0.3 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' } }, scales: { y: { title: { display: true, text: 'Tasa por 100.000' } } } } }); }
+        function createChartCorrelacion() {
+            charts.correlacion = new Chart(document.getElementById('chartCorrelacion'), { type: 'scatter', data: { datasets: [{ label: 'Hombres', data: scatterData.hombres, backgroundColor: 'rgba(59, 130, 246, 0.6)', borderColor: '#3b82f6', pointRadius: 8 }, { label: 'Mujeres', data: scatterData.mujeres, backgroundColor: 'rgba(236, 72, 153, 0.6)', borderColor: '#ec4899', pointRadius: 8 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: ctx => { const d = ctx.raw; return [`Año: ${d.año}`, `Mortalidad: ${d.x}`, `EV: ${d.y} años`]; } } } }, scales: { x: { title: { display: true, text: 'Tasa de Mortalidad' }, min: 650, max: 1150 }, y: { title: { display: true, text: 'Esperanza de Vida (años)' }, min: 17, max: 25 } } } });
         }
-
-        function createChartCovidRelativo() {
-            const ctx = document.getElementById('chartCovidRelativo');
-            charts.covidRelativo = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: covidData.periodos,
-                    datasets: [{
-                        label: 'Variación %',
-                        data: covidData.variaciones,
-                        backgroundColor: ['#64748b', '#dc2626', '#dc2626', '#3b82f6'],
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: ctx => `${ctx.parsed.y > 0 ? '+' : ''}${ctx.parsed.y.toFixed(1)}%` } }
-                    },
-                    scales: {
-                        y: { title: { display: true, text: 'Variación %' }, min: -2, max: 7 }
-                    }
-                }
-            });
-        }
-
-        function createChartCovidSexo() {
-            const ctx = document.getElementById('chartCovidSexo');
-            charts.covidSexo = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
-                    datasets: [
-                        { label: 'Hombres', data: [993.9, 1003.3, 1054.6, 1062.3, 1025.1, 955.5], borderColor: '#3b82f6', tension: 0.3 },
-                        { label: 'Mujeres', data: [731.1, 741.7, 771.7, 774.7, 751.2, 703.4], borderColor: '#ec4899', tension: 0.3 }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'top' } },
-                    scales: { y: { title: { display: true, text: 'Tasa por 100.000' } } }
-                }
-            });
-        }
-
-        // =============================================
-        // GRÁFICO CORRELACIÓN
-        // =============================================
         function updateCorrelacionChart() {
-  if (!charts.correlacion) return;
-
-  const sexo = document.getElementById('selectCorrelacion').value;
-  const añoSel = document.getElementById('selectAnoCorrelacion').value;
-  const provSel = document.getElementById('selectProvCorrelacion').value;
-
-  const filtrar = (data) => {
-    return data.filter(d => {
-      const pasaAño = (añoSel === 'todos') || (d.año === parseInt(añoSel, 10));
-      const pasaProv = (provSel === 'todas') || (d.prov === provSel);
-      return pasaAño && pasaProv;
-    });
-  };
-
-  // Aplico filtros a ambos conjuntos
-  charts.correlacion.data.datasets[0].data = filtrar(scatterData.hombres);
-  charts.correlacion.data.datasets[1].data = filtrar(scatterData.mujeres);
-
-  // Muestro/oculto según sexo
-  charts.correlacion.data.datasets.forEach((ds, i) => {
-    if (sexo === 'todos') ds.hidden = false;
-    else if (sexo === 'hombres') ds.hidden = i !== 0;
-    else if (sexo === 'mujeres') ds.hidden = i !== 1;
-  });
-
-  charts.correlacion.update();
-}
-
-
-        // =============================================
-        // INICIALIZACIÓN
-        // =============================================
+            const sexo = document.getElementById('selectCorrelacion').value;
+            charts.correlacion.data.datasets.forEach((ds, i) => {
+                if (sexo === 'todos') ds.hidden = false;
+                else if (sexo === 'hombres') ds.hidden = i !== 0;
+                else if (sexo === 'mujeres') ds.hidden = i !== 1;
+            });
+            charts.correlacion.update();
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
-            createChartResumen();
-            createChartTemporal();
-            createChartCausas();
-            createChartTendenciaCausas();
-            createChartSuicidio();
-            createChartRatioGenero();
-            createChartGeneroBarras();
-            createChartEVGenero();
-            createChartDepartamentos();
-            createChartProvincias();
-            createChartCovidAbsoluto();
-            createChartCovidRelativo();
-            createChartCovidSexo();
-            createChartCorrelacion();
-            generateHeatmap();  // Generar heatmap al inicio
-            
-            // Animación de KPIs
-            const kpis = document.querySelectorAll('.kpi-value');
-            kpis.forEach(kpi => kpi.classList.add('animate-number'));
+            createChartResumen(); createChartTemporal(); createChartCausas(); createChartTendenciaCausas();
+            createChartSuicidio(); createChartRatioGenero(); createChartGeneroBarras(); createChartEVGenero();
+            createChartDepartamentos(); createChartProvincias(); createChartCovidAbsoluto();
+            createChartCovidRelativo(); createChartCovidSexo(); createChartCorrelacion(); generateHeatmap();
         });
     </script>
 </body>
