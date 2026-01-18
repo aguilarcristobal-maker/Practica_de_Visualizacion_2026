@@ -3,27 +3,29 @@
 ## Proyecto de Visualización de Datos
 
 **Autor:** Cristóbal Eduardo Aguilar Gallardo  
-**Fecha:** Enero 2026
-**Asignatura:** Visualización de Datos - Práctica 2da. parte
+**Fecha:** Enero 2026  
+**Asignatura:** Visualización de Datos - Práctica 2
 
 ---
 
-##  Descripción
+## Descripción
 
 Este proyecto analiza los indicadores de **mortalidad** y **esperanza de vida a los 65 años** en la Comunitat Valenciana durante el período 2010-2023. El análisis se centra en responder 6 preguntas de investigación clave mediante visualizaciones interactivas.
 
 ### Dataset
 
-- **Fuente:** [Portal Estadístico de la Generalitat Valenciana](https://pegv.gva.es/)
+- **Fuente:** [Portal Estadístico de la Generalitat Valenciana](https://pegv.gva.es/) - Conselleria de Sanitat
 - **Registros:** 5.880
 - **Variables:** 12
-- **Período:** 2010-2023 (14 años)
+- **Período Mortalidad:** 2010-2023 (14 años)
+- **Período Esperanza de Vida:** 2010-2022 (13 años)
 - **Cobertura:** 24 departamentos de salud, 3 provincias
+- **Indicador:** Tasa Ajustada por Edad (TAE) por 100.000 habitantes
 - **Licencia:** CC-BY / Dominio público
 
 ---
 
-##  Preguntas de Investigación
+## Preguntas de Investigación
 
 1. ¿Cómo ha evolucionado la mortalidad general y cuál fue el impacto del COVID-19?
 2. ¿Cuál es la jerarquía de las principales causas de mortalidad?
@@ -38,23 +40,50 @@ Este proyecto analiza los indicadores de **mortalidad** y **esperanza de vida a 
 
 | Indicador | Valor | Interpretación |
 |-----------|-------|----------------|
-| Mortalidad 2023 | 819.9 por 100.000 | Mínimo histórico (-4.3% vs 2010) |
-| Esperanza de vida | 21.5 años (a los 65) | +0.9 años vs 2010 |
-| Brecha de género | 3.8 años | Mujeres viven más |
-| Impacto COVID-19 | +5.6% | Exceso mortalidad 2020-2021 |
-| Tendencia suicidio | +11.2% | Única causa en aumento |
-| Disparidad territorial | 1.25x | Ratio máx/mín entre departamentos |
+| Mortalidad 2023 | 819.88 por 100.000 | Mínimo histórico (**-10.0%** vs 2010) |
+| Esperanza de vida (2022) | 20.6 años (a los 65) | Promedio ambos sexos |
+| Brecha de género | 3.8 años | Mujeres viven más (22.5 vs 18.7) |
+| Impacto COVID-19 | +3.2% | Exceso mortalidad 2021 vs pre-COVID |
+| Tendencia suicidio | **+11.2%** | Única causa en aumento |
+| Disparidad territorial | 24.5% | Entre Doctor Peset (783.1) y Ribera (975.2) |
+
+### Cambios por Causa de Mortalidad (2010-2023)
+
+| Causa | Tasa Promedio | Cambio |
+|-------|---------------|--------|
+| Cáncer | 228.8 | -8.1% |
+| Cardiopatía Isquémica | 74.8 | **-36.0%** |
+| Enf. Cerebrovascular | 57.1 | **-44.2%** |
+| Suicidio | 7.6 | **+11.2%** ⚠️ |
+
+### Ratios de Género (Hombres/Mujeres)
+
+| Causa | Ratio |
+|-------|-------|
+| Suicidio | **3.11x** |
+| Cardiopatía Isquémica | 2.29x |
+| Cáncer | 2.08x |
+| Mortalidad General | 1.58x |
+| Enf. Cerebrovascular | 1.22x |
 
 ---
 
 ##  Estructura del Repositorio
 
 ```
-├── README.md                    # Este archivo
+├── README.md                           # Este archivo
 ├── data/
-│   └── mortalidad_esperanza_vida_cv.csv  # Dataset principal
+│   ├── raw/                            # Datos originales de Conselleria
+│   │   ├── esperanza-de-vida-a-los-65-en-la-comunitat-valenciana.csv
+│   │   ├── tae-mortalidad-general-en-la-comunitat-valenciana.csv
+│   │   ├── tae-mortalidad-cancer-en-la-comunitat-valenciana.csv
+│   │   ├── tae-mortalidad-cardiopatia-isquemica-en-la-comunitat-valenciana.csv
+│   │   ├── tae-mortalidad-enfermedad-cerebrovascular-en-la-comunitat-valenciana.csv
+│   │   └── tae-mortalidad-suicidio-en-la-comunitat-valenciana.csv
+│   └── processed/
+│       └── mortalidad_esperanza_vida_cv.csv  # Dataset consolidado
 ├── codigo/
-│   └── generar_figuras.py      # Script Python con todo el código
+│   └── generar_figuras.py              # Script Python para figuras estáticas
 ├── figuras/
 │   ├── fig1_evolucion_mortalidad_general.png
 │   ├── fig2_jerarquia_causas_mortalidad.png
@@ -70,15 +99,15 @@ Este proyecto analiza los indicadores de **mortalidad** y **esperanza de vida a 
 │   ├── fig12_impacto_covid.png
 │   └── fig13_dashboard_resumen.png
 ├── docs/
-│   ├── GUION_VIDEO.md          # Guion del vídeo de presentación
-│   └── JUSTIFICACION_VISUAL.md # Justificación de codificaciones
+│   ├── GUION_VIDEO.md                  # Guion del vídeo de presentación
+│   └── JUSTIFICACION_VISUAL.md         # Justificación de codificaciones
 └── dashboard/
-    └── index.html              # Dashboard interactivo
+    └── index.html                      # Dashboard interactivo
 ```
 
 ---
 
-## ️ Requisitos
+##  Requisitos
 
 ```bash
 pip install pandas matplotlib seaborn numpy scipy
@@ -103,26 +132,11 @@ Abrir `dashboard/index.html` en un navegador o acceder al enlace publicado.
 
 ##  Visualizaciones
 
-### Vista rápida
+### Figura 1: Evolución Temporal
 ![Evolución Mortalidad](figuras/fig1_evolucion_mortalidad_general.png)
 
-![Figura 3 – Evolución causas específicas](figuras/fig3_evolucion_causas_especificas.png)
-
-![Heatmap departamentos](figuras/fig8_heatmap_departamentos.png)
-
+### Figura 13: Dashboard Resumen
 ![Dashboard](figuras/fig13_dashboard_resumen.png)
-
-### Galería completa (enlaces)
-- [Figura 2 – Jerarquía de causas](figuras/fig2_jerarquia_causas_mortalidad.png)
-- [Figura 3 – Evolución causas específicas](figuras/fig3_evolucion_causas_especificas.png)
-- [Figura 4 – Disparidad por género](figuras/fig4_disparidad_genero_ratio.png)
-- [Figura 5 – Comparativa sexo-causa](figuras/fig5_comparativa_sexo_causa.png)
-- [Figura 6 – Esperanza de vida por género](figuras/fig6_esperanza_vida_genero.png)
-- [Figura 7 – Ranking departamentos](figuras/fig7_ranking_departamentos.png)
-- [Figura 9 – Tendencia suicidio](figuras/fig9_tendencia_suicidio.png)
-- [Figura 10 – Correlación](figuras/fig10_scatter_correlacion.png)
-- [Figura 11 – Comparativa provincias](figuras/fig11_comparativa_provincias.png)
-- [Figura 12 – Impacto COVID](figuras/fig12_impacto_covid.png)
 
 ---
 
@@ -131,10 +145,10 @@ Abrir `dashboard/index.html` en un navegador o acceder al enlace publicado.
 | Elemento | Codificación | Justificación |
 |----------|--------------|---------------|
 | Series temporales | Gráfico de líneas | Expresividad para datos continuos |
-| Comparación por sexo | Barras + colores azul/rosa | Convención y efectividad |
+| Comparación por sexo | Colores azul/morado | Convención y efectividad |
 | Disparidades territoriales | Heatmap + barras | Patrones bidimensionales |
-| Correlaciones | Scatter plot | Estándar para relaciones bivariadas |
-| Período COVID | Sombreado rojo | Destaque visual del período crítico |
+| Correlaciones | Scatter plot (624 puntos) | Estándar para relaciones bivariadas |
+| Período COVID | Sombreado destacado | Destaque visual del período crítico |
 
 ---
 
@@ -145,10 +159,18 @@ https://practica-de-visualizacion-2026.vercel.app/
 
 ---
 
-##  Referencias
+##  Fuentes de Datos
 
-- Portal Estadístico GVA: https://pegv.gva.es/
-- Conselleria de Sanitat: https://www.san.gva.es/
+Todos los datos provienen del **Portal Estadístico de la Generalitat Valenciana** (Conselleria de Sanitat Universal i Salut Pública):
+
+- [Portal Estadístico GVA](https://pegv.gva.es/)
+- [Conselleria de Sanitat](https://www.san.gva.es/)
+
+### Nota Metodológica
+
+- Los datos de **esperanza de vida** están disponibles hasta 2022 (no hay datos de 2023 en la fuente oficial).
+- El scatter de correlación incluye **624 observaciones** (24 departamentos × 13 años × 2 sexos).
+- La correlación Mortalidad vs Esperanza de Vida es **r = -0.986** (p < 0.001).
 
 ---
 
@@ -161,4 +183,3 @@ Este proyecto está bajo licencia MIT. Los datos originales son de dominio públ
 ##  Contacto
 
 **Cristóbal Eduardo Aguilar Gallardo**  
-
