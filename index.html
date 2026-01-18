@@ -262,7 +262,7 @@
                 <div class="controls">
                     <div class="control-group"><span class="control-label">Sexo:</span><select id="selectCorrelacion" onchange="updateCorrelacionChart()"><option value="todos">Ambos</option><option value="hombres">Solo Hombres</option><option value="mujeres">Solo Mujeres</option></select></div>
                     <div class="control-group"><span class="control-label">Año:</span><select id="selectAnoCorrelacion" onchange="updateCorrelacionChart()"><option value="todos">Todos (2010-2023)</option><option value="2010">2010</option><option value="2015">2015</option><option value="2019">2019</option><option value="2020">2020 (COVID)</option><option value="2021">2021 (COVID)</option><option value="2023">2023</option></select></div>
-                  
+                    <div class="control-group"><span class="control-label">Provincia:</span><select id="selectProvCorrelacion" onchange="updateCorrelacionChart()"><option value="todas">Todas</option><option value="Alicante">Alicante</option><option value="Castellón">Castellón</option><option value="Valencia">Valencia</option></select></div>
                 </div>
                 <div class="chart-container tall"><canvas id="chartCorrelacion"></canvas></div>
                 <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;"><strong>Correlación de Pearson: r = -0.983</strong> (p < 0.001)</div>
@@ -337,22 +337,10 @@
         const covidData = { periodos: ['Pre-COVID', '2020', '2021', 'Post-COVID'], valores: [857.1, 902.6, 907.8, 848.9], variaciones: [0, 5.3, 5.9, -1.0] };
         
         // Scatter data simplificado
-     const scatterData = [];
-
-años.forEach((año, i) => {
-    scatterData.push({
-        sexo: 'hombres',
-        año: año,
-        x: datosTemporales.hombres[i],
-        y: evPorSexo.hombres[i]
-    });
-    scatterData.push({
-        sexo: 'mujeres',
-        año: año,
-        x: datosTemporales.mujeres[i],
-        y: evPorSexo.mujeres[i]
-    });
-});
+        const scatterData = {
+            hombres: [{x: 1100, y: 18.5, año: 2010, dept: "Promedio", prov: "CV"}, {x: 1050, y: 19.0, año: 2015, dept: "Promedio", prov: "CV"}, {x: 1060, y: 18.8, año: 2020, dept: "Promedio", prov: "CV"}, {x: 955, y: 19.6, año: 2023, dept: "Promedio", prov: "CV"}],
+            mujeres: [{x: 730, y: 22.8, año: 2010, dept: "Promedio", prov: "CV"}, {x: 720, y: 23.1, año: 2015, dept: "Promedio", prov: "CV"}, {x: 770, y: 22.7, año: 2020, dept: "Promedio", prov: "CV"}, {x: 703, y: 23.4, año: 2023, dept: "Promedio", prov: "CV"}]
+        };
         
         Chart.defaults.font.family = "'Inter', sans-serif";
         Chart.defaults.color = '#64748b';
