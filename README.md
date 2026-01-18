@@ -106,6 +106,8 @@ Abrir `dashboard/index.html` en un navegador o acceder al enlace publicado.
 ### Vista rápida
 ![Evolución Mortalidad](figuras/fig1_evolucion_mortalidad_general.png)
 
+![Figura 3 – Evolución causas específicas](figuras/fig3_evolucion_causas_especificas.png)
+
 ![Heatmap departamentos](figuras/fig8_heatmap_departamentos.png)
 
 ![Dashboard](figuras/fig13_dashboard_resumen.png)
