@@ -8,7 +8,7 @@ Autor: Cristóbal Eduardo Aguilar Gallardo
 Fecha: Enero 2026
 Descripción: Análisis y visualización de datos epidemiológicos de la CV
 
-Este script genera todas las figuras del proyecto de visualización.
+Este script genera todas las figuras de la parte II de la Practica de visualización.
 Dataset: Portal Estadístico de la Generalitat Valenciana
 
 ================================================================================
@@ -72,7 +72,7 @@ COLORS = {
 # CARGA DE DATOS
 # ============================================================================
 
-def cargar_datos(filepath='data/mortalidad_esperanza_vida_opcion_c_v4_final.csv'):
+def cargar_datos(filepath='data/mortalidad_esperanza_vida_cv_consolidado.csv'):
     """
     Carga el dataset principal.
     
