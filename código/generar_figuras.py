@@ -72,7 +72,7 @@ COLORS = {
 # CARGA DE DATOS
 # ============================================================================
 
-def cargar_datos(filepath='data/mortalidad_esperanza_vida_cv_consolidado.csv'):
+def cargar_datos(filepath='/mnt/data/mortalidad_esperanza_vida_cv_consolidado.csv'):
     """
     Carga el dataset principal.
     
